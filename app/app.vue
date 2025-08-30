@@ -1,11 +1,12 @@
 <script setup>
+import { useRuntimeConfig } from 'nuxt/app';
+
 const state = reactive({
   images: [],
 });
 
-const domain = new URL(window.location.href).origin;
-
-const res = await fetch(domain + "/api/gallery");
+const config = useRuntimeConfig()
+const res = await fetch(config.public.NUXT_APP_URL + "/api/gallery");
 
 res.json().then((images) => {
   state.images = images;
