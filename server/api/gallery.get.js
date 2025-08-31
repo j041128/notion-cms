@@ -1,20 +1,20 @@
 import { Client } from "@notionhq/client";
 
 const notion = new Client({ auth: process.env.NOTION_API_KEY });
-const image_database_id = process.env.NOTION_DATABASE_ID;
+const database_id = process.env.NOTION_DATABASE_ID;
 
-let payload = [];
+let payload = {};
 
 async function getImages() {
   const data = await notion.databases.query({
-    database_id: image_database_id,
+    database_id: database_id,
   });
   return data;
 }
 
 getImages().then((data) => {
-  payload = data.results.map((v) => {
-    return v["properties"]["ファイル&メディア"]["files"][0]["file"]["url"];
+  data.results.map((v) => {
+    payload[v["properties"]["名前"]["title"][0]["plain_text"]] = v["properties"]["ファイル&メディア"]["files"][0]["file"]["url"];
   });
 });
 
