@@ -118,7 +118,7 @@ textsRes.json().then((texts) => {
             </template>
             <template v-slot:content>
               <div class="grid-rows-3 leading-none">
-                <div>
+                <div class="flex justify-center">
                   <span class="font-jost text-white text-[28px]">countdown</span>
                 </div>
                 <CountDown />
@@ -169,7 +169,7 @@ textsRes.json().then((texts) => {
                 <NuxtImg :src="state.images.profile" class="image" />
               </template>
               <template v-slot:content>
-                <div class="content flex w-full h-full items-center justify-center">
+                <div class="flex w-full h-full items-center justify-center">
                     <p class="font-cursive text-white text-[80px]">profile</p>
                 </div>
               </template>
@@ -179,31 +179,33 @@ textsRes.json().then((texts) => {
             </div>
           </div>
           <div class="profile py-[39px]">
-            <div class="grid grid-cols-2 grid-rows-2 mx-15">
-              <div class="flex justify-center">
-                <NuxtImg :src="state.images.groom" width="175" height="175" />
-              </div>
-              <div class="flex items-center justify-center">
-                <div>
-                  <p class="text-center text-[30px] font-mincho">{{ state.texts.profile_groom_name }}</p>
-                  <p class="text-center text-[16px] text-[#FF8F89] font-jost">{{ state.texts.profile_groom_type }}</p>
+            <div class="mx-15">
+              <div class="grid grid-cols-2">
+                <div class="flex justify-center">
+                  <NuxtImg :src="state.images.groom" width="175" height="175" />
+                </div>
+                <div class="flex items-center justify-center">
+                  <div>
+                    <p class="text-center text-[30px] font-mincho">{{ state.texts.profile_groom_name }}</p>
+                    <p class="text-center text-[16px] text-[#FF8F89] font-jost">{{ state.texts.profile_groom_type }}</p>
+                  </div>
                 </div>
               </div>
-              <div class="col-span-2">
+              <div class="my-4">
                 <p class="text-center text-[16px] font-mincho">{{ state.texts.profile_groom_comment }}</p>
               </div>
-            </div>
-            <div class="grid grid-cols-2 grid-rows-2 mx-15">
-              <div class="flex items-center justify-center">
-                <div>
-                  <p class="text-center text-[30px] font-mincho">{{ state.texts.profile_bride_name }}</p>
-                  <p class="text-center text-[16px] text-[#FF8F89] font-jost">{{ state.texts.profile_bride_type }}</p>
+              <div class="grid grid-cols-2">
+                <div class="flex items-center justify-center">
+                  <div>
+                    <p class="text-center text-[30px] font-mincho">{{ state.texts.profile_bride_name }}</p>
+                    <p class="text-center text-[16px] text-[#FF8F89] font-jost">{{ state.texts.profile_bride_type }}</p>
+                  </div>
+                </div>
+                <div class="flex justify-center">
+                  <NuxtImg :src="state.images.bride" width="175" height="175" />
                 </div>
               </div>
-              <div class="flex justify-center">
-                <NuxtImg :src="state.images.bride" width="175" height="175" />
-              </div>
-              <div class="col-span-2">
+              <div class="my-4">
                 <p class="text-center text-[16px] font-mincho">{{ state.texts.profile_bride_comment }}</p>
               </div>
             </div>
@@ -242,12 +244,12 @@ textsRes.json().then((texts) => {
 }
 .mask-img-top-bottom {
   --mask:
-    radial-gradient(22.36px at 50% 30px,#000 99%,#0000 101%) calc(50% - 20px) 0/40px 51% repeat-x,
-    radial-gradient(22.36px at 50% -20px,#0000 99%,#000 101%) 50% 10px/40px calc(51% - 10px) repeat-x,
-    radial-gradient(22.36px at 50% calc(100% - 30px),#000 99%,#0000 101%) calc(50% - 20px) 100%/40px 51% repeat-x,
-    radial-gradient(22.36px at 50% calc(100% + 20px),#0000 99%,#000 101%) 50% calc(100% - 10px)/40px calc(51% - 10px) repeat-x;
+    radial-gradient(34.41px at 50% 48px,#000 99%,#0000 101%) calc(50% - 40px) 0/80px 51% repeat-x,
+    radial-gradient(34.41px at 50% -28px,#0000 99%,#000 101%) 50% 20px/80px calc(51% - 20px) repeat-x,
+    radial-gradient(34.41px at 50% calc(100% - 48px),#000 99%,#0000 101%) calc(50% - 40px) 100%/80px 51% repeat-x,
+    radial-gradient(34.41px at 50% calc(100% + 28px),#0000 99%,#000 101%) 50% calc(100% - 20px)/80px calc(51% - 20px) repeat-x;
   -webkit-mask: var(--mask);
-          mask: var(--mask);
+      mask: var(--mask);
 }
 .gradation {
   background: linear-gradient(180deg, #EEFFF7, #E6F8FF);

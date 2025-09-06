@@ -1,11 +1,20 @@
 <template>
     <div class="invitation" id="invitation">
-        <div class="py-[75px] curve">
-            <div class="text-center leading-none">
-            <p class="font-cursive text-[60px]">Invitation</p>
-            <p class="font-mincho text-[24px]">ご入力ください</p>
-            </div>
-        </div>
+        <ImageOnContent>
+            <template v-slot:image>
+                <svg width="375" height="160" viewBox="0 0 375 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <ellipse cx="188" cy="11.5" rx="221" ry="148.5" transform="rotate(180 188 11.5)" fill="#FFFCE7"/>
+                </svg>
+            </template>
+            <template v-slot:content>
+                <div class="flex w-full h-full items-center justify-center">
+                    <div class="text-center leading-none">
+                        <p class="font-cursive text-[60px] text-[#EEB0F0]">Invitation</p>
+                        <p class="font-mincho text-[24px]">ご入力ください</p>
+                    </div>
+                </div>
+            </template>
+        </ImageOnContent>
         <div class="mx-2">
             <label for="attendance"><span class="font-mincho text-[24px] mr-2">ご出欠</span><Badge>必須</Badge></label>
             <div id="attendance">
@@ -54,7 +63,11 @@
                 <textarea class="m-1 h-[170px] border-1 border-[#C0E5D4] outline-[#C0E5D4] rounded-[6px]" aria-describedby="allergy-helper-text"></textarea>
                 </div>
             </div>
-            <button class="py-[36px] px-[81px] rounded-full shadow-md bg-[#D7F0E5] disabled:bg-[#D9D9D9] disabled:text-white" :disabled="checkRequired()" @click="handleFormSubmit()"><span class="font-mincho text-[36px]">招待状に回答する</span></button>
+            <div class="flex justify-center">
+                <button class="py-[28px] px-[81px] rounded-full shadow-md bg-[#D7F0E5] disabled:bg-[#D9D9D9] disabled:text-white" :disabled="checkRequired()" @click="handleFormSubmit()">
+                    <span class="font-mincho text-[28px]">招待状に回答する</span>
+                </button>
+            </div>
         </div>
     </div>
 </template>
