@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="thanks pb-100">
         <div class="py-[75px] curve">
             <div class="text-center leading-none">
                 <p class="font-cursive text-[60px]">Completed</p>

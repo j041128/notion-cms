@@ -32,7 +32,7 @@ textsRes.json().then((texts) => {
               <div class="col-span-2">
               </div>
               <div class="col-span-3">
-                <dl class="font-mincho text-[24px] pb-2">
+                <dl class="font-mincho text-[20px] pb-2">
                   <div class="grid grid-cols-5 pb-2">
                     <dt class="col-span-2 mx-10" style="text-align-last: justify;">日時</dt>
                     <dd class="col-span-3">{{ state.texts.information_datetime }}</dd>
@@ -70,9 +70,18 @@ textsRes.json().then((texts) => {
         </div>
         <div class="col-span-1 mw-[750px] h-[100vh] overflow-x-auto">
           <div class="grid grid-cols-10">
-            <NuxtImg :src="state.images.top" class="col-span-9"/>
+            <NuxtImg :src="state.images.top" class="col-span-9" width="329" height="409"/>
             <div class="col-span-1 w-full">
-              <span class="[writing-mode:vertical-rl] font-jost text-[#FCDADA]"><span class="text-[24px]">{{ state.texts.top_name }}</span><span class="text-[17px]">{{ state.texts.top_month }}</span><span class="text-[28px]">{{ state.texts.top_day }}</span><span class="text-[17px]">{{ state.texts.top_year }}</span></span>
+              <span class="[writing-mode:vertical-rl] font-jost text-[#FCDADA]">
+                <span class="mx-[22px]">
+                  <span class="text-[24px]">{{ state.texts.top_name }}</span>
+                </span>
+                <span class="mx-[4px]">
+                  <span class="text-[17px]">{{ state.texts.top_month }}</span>
+                  <span class="text-[28px]">{{ state.texts.top_day }}</span>
+                  <span class="text-[17px]">{{ state.texts.top_year }}</span>
+                </span>
+              </span>
             </div>
           </div>
           <div class="greeting py-[40px]">
@@ -120,7 +129,7 @@ textsRes.json().then((texts) => {
             <div>
               <p class="text-center font-cursive text-[60px] tracking-tighter">Information</p>
             </div>
-            <dl class="font-mincho text-[24px] pb-2">
+            <dl class="font-mincho text-[20px] pb-2">
               <div class="grid grid-cols-5 pb-2">
                 <dt class="col-span-2 mx-10" style="text-align-last: justify;">日時</dt>
                 <dd class="col-span-3">{{ state.texts.information_datetime }}</dd>
@@ -166,28 +175,38 @@ textsRes.json().then((texts) => {
               </template>
             </ImageOnContent>
             <div class="absolute top-[90%] left-[90%]">
-              <NuxtImg :src="state.images.jewel1" />
+              <NuxtImg src="/img/jewel3.png" />
             </div>
           </div>
-          <div class="profile">
-            <div class="grid grid-cols-2">
-              <div>
+          <div class="profile py-[39px]">
+            <div class="grid grid-cols-2 grid-rows-2 mx-15">
+              <div class="flex justify-center">
+                <NuxtImg :src="state.images.groom" width="175" height="175" />
               </div>
-              <div>
-                <p class="text-center font-mincho">{{ state.texts.profile_groom_name }}</p>
-                <p class="text-center font-jost">{{ state.texts.profile_groom_type }}</p>
+              <div class="flex items-center justify-center">
+                <div>
+                  <p class="text-center text-[30px] font-mincho">{{ state.texts.profile_groom_name }}</p>
+                  <p class="text-center text-[16px] text-[#FF8F89] font-jost">{{ state.texts.profile_groom_type }}</p>
+                </div>
               </div>
-            </div>
-            <p>{{ state.texts.profile_groom_comment }}</p>
-            <div class="grid grid-cols-2">
-              <div>
-                <p class="text-center font-mincho">{{ state.texts.profile_bride_name }}</p>
-                <p class="text-center font-jost">{{ state.texts.profile_bride_type }}</p>
-              </div>
-              <div>
+              <div class="col-span-2">
+                <p class="text-center text-[16px] font-mincho">{{ state.texts.profile_groom_comment }}</p>
               </div>
             </div>
-            <p>{{ state.texts.profile_bride_comment }}</p>
+            <div class="grid grid-cols-2 grid-rows-2 mx-15">
+              <div class="flex items-center justify-center">
+                <div>
+                  <p class="text-center text-[30px] font-mincho">{{ state.texts.profile_bride_name }}</p>
+                  <p class="text-center text-[16px] text-[#FF8F89] font-jost">{{ state.texts.profile_bride_type }}</p>
+                </div>
+              </div>
+              <div class="flex justify-center">
+                <NuxtImg :src="state.images.bride" width="175" height="175" />
+              </div>
+              <div class="col-span-2">
+                <p class="text-center text-[16px] font-mincho">{{ state.texts.profile_bride_comment }}</p>
+              </div>
+            </div>
           </div>
           <hr class="text-[#F5DAF6] border-8">
           <NuxtPage />
