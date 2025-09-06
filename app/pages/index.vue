@@ -115,6 +115,22 @@ const handleFormSubmit = async () => {
     body.append('entry.720946575', form.last);
     body.append('entry.1837378746', form.firstkana);
     body.append('entry.379307055', form.lastkana);
+    body.append('entry.577033923', form.name1);
+    body.append('entry.1463568491', form.name1kana);
+    body.append('entry.720175567', form.name2);
+    body.append('entry.1443811429', form.name2kana);
+    body.append('entry.924191309', form.name3);
+    body.append('entry.176464161', form.name3kana);
+    body.append('entry.829516189', form.name4);
+    body.append('entry.1903233454', form.name4kana);
+    body.append('entry.1446298437', form.flag);
+    body.append('entry.280336886', form.mailaddress);
+    body.append('entry.1473960836', form.zipcode);
+    body.append('entry.338786', form.city);
+    body.append('entry.778005714', form.address2);
+    body.append('entry.331640168', form.address3);
+    body.append('entry.1584758284', form.allergy);
+
 
     const CORS_PROXY = config.public.NUXT_APP_URL + "/api/proxy/";
 

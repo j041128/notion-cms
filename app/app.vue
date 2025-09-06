@@ -69,25 +69,35 @@ textsRes.json().then((texts) => {
             </div>
         </div>
         <div class="col-span-1 mw-[750px] h-[100vh] overflow-x-auto">
-          <div class="top grid grid-cols-10">
-            <NuxtImg :src="state.images.top" class="col-span-9" width="329" height="409"/>
-            <div class="col-span-1 w-full">
-              <span class="[writing-mode:vertical-rl] font-jost text-[#FCDADA]">
-                <span class="mx-[22px]">
-                  <span class="text-[24px]">{{ state.texts.top_name }}</span>
+          <div class="relative">
+            <div class="top grid grid-cols-10">
+              <NuxtImg :src="state.images.top" class="col-span-9 w-full" width="329" height="409"/>
+              <div class="col-span-1 w-full">
+                <span class="[writing-mode:vertical-rl] font-jost text-[#FCDADA]">
+                  <span class="mx-[22px]">
+                    <span class="text-[24px]">{{ state.texts.top_name }}</span>
+                  </span>
+                  <span class="mx-[4px]">
+                    <span class="text-[17px]">{{ state.texts.top_month }}</span>
+                    <span class="text-[28px]">{{ state.texts.top_day }}</span>
+                    <span class="text-[17px]">{{ state.texts.top_year }}</span>
+                  </span>
                 </span>
-                <span class="mx-[4px]">
-                  <span class="text-[17px]">{{ state.texts.top_month }}</span>
-                  <span class="text-[28px]">{{ state.texts.top_day }}</span>
-                  <span class="text-[17px]">{{ state.texts.top_year }}</span>
-                </span>
-              </span>
+              </div>
+            </div>
+            <div class="absolute top-[90%] left-[85%]">
+              <NuxtImg src="/img/jewel1.png" />
             </div>
           </div>
           <div class="greeting py-[40px]">
-            <div class="leading-none">
-              <p class="text-center text-[#FF8F89] font-jost text-[30px] ">WEDDING</p>
-              <p class="text-center text-[#FF89A9] font-cursive text-[64px] ">Invitation</p>
+            <div class="relative">
+              <div class="leading-none">
+                <p class="text-center text-[#FF8F89] font-jost text-[30px] ">WEDDING</p>
+                <p class="text-center text-[#FF89A9] font-cursive text-[64px] ">Invitation</p>
+              </div>
+              <div class="absolute top-[90%] left-[0%]">
+                <NuxtImg src="/img/jewel2.png" />
+              </div>
             </div>
             <div class="pb-8">
               <p class="text-center font-mincho">{{ state.texts.greeting_acronym }}</p>
@@ -112,19 +122,24 @@ textsRes.json().then((texts) => {
               <p class="text-center font-mincho">{{ state.texts.greeting_bride }}</p>
             </div>
           </div>
-          <ImageOnContent class="gradation">
-            <template v-slot:image>
-              <NuxtImg :src="state.images.countdown" class="mask-img-top-bottom" />
-            </template>
-            <template v-slot:content>
-              <div class="grid-rows-3 leading-none">
-                <div class="flex justify-center">
-                  <span class="font-jost text-white text-[28px]">countdown</span>
+          <div class="relative">
+            <ImageOnContent class="gradation">
+              <template v-slot:image>
+                <NuxtImg :src="state.images.countdown" class="mask-img-top-bottom" />
+              </template>
+              <template v-slot:content>
+                <div class="grid-rows-3 leading-none">
+                  <div class="flex justify-center">
+                    <span class="font-jost text-white text-[28px]">countdown</span>
+                  </div>
+                  <CountDown />
                 </div>
-                <CountDown />
-              </div>
-            </template>
-          </ImageOnContent>
+              </template>
+            </ImageOnContent>
+            <div class="absolute top-[85%] left-[67%]">
+              <NuxtImg src="/img/jewel3.png" />
+            </div>
+          </div>
           <div class="information py-[40px]">
             <div>
               <p class="text-center font-cursive text-[60px] tracking-tighter">Information</p>
@@ -174,8 +189,8 @@ textsRes.json().then((texts) => {
                 </div>
               </template>
             </ImageOnContent>
-            <div class="absolute top-[90%] left-[90%]">
-              <NuxtImg src="/img/jewel3.png" />
+            <div class="absolute top-[85%] left-[82%]">
+              <NuxtImg src="/img/jewel4.png" />
             </div>
           </div>
           <div class="profile py-[39px]">

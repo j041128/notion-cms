@@ -2,7 +2,7 @@
     <div class="grid grid-cols-4">
         <div class="flex col-span-3 flex-nowrap">
             <label for="zipcode1" class="flex font-mincho text-[20px] items-center">〒</label>
-            <input type="text" class="m-1 w-full h-[60px] border-1 border-[#C0E5D4] rounded-[6px] focus:border-3 outline-[#C0E5D4] text-[20px] font-mincho text-center" id="zipcode1" placeholder="1234567" v-model="zipcode" @input="searchAddress">
+            <input type="text" class="m-1 w-full h-[60px] border-1 border-[#C0E5D4] rounded-[6px] focus:border-3 outline-[#C0E5D4] text-[20px] font-mincho text-center" id="zipcode1" placeholder="1234567" v-model="zipcode" @input="searchAddress" @change="searchAddress">
         </div>
         <div class="col-span-3">
             <select class="m-1 w-full h-[60px] border-1 border-[#C0E5D4] rounded-[6px] focus:border-3 outline-[#C0E5D4] text-[20px] font-mincho text-center" placeholder="都道府県" v-model="address1">
