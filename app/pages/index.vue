@@ -17,11 +17,11 @@
         </ImageOnContent>
         <div class="mx-2">
             <label for="attendance"><span class="font-mincho text-[24px] mr-2">ご出欠</span><Badge>必須</Badge></label>
-            <div id="attendance">
+            <div id="attendance" class="my-4">
                 <RadioButton :items="attendances" v-model="form.attendance" :id="'attendance1'" :name="'attendance'" />
             </div>
             <label for="name"><span class="font-mincho text-[24px] mr-2">お名前</span><Badge>必須</Badge></label>
-            <div id="name">
+            <div id="name" class="my-4">
                 <NameInput
                 v-model:first="form.first"
                 v-model:last="form.last"
@@ -31,36 +31,36 @@
             </div>
             <div>
                 <label><span class="font-mincho text-[24px]">ご連名</span></label>
-                <div>
-                <FullNameInput v-model:name="form.name1" v-model:kana="form.name1kana" placeholder="連名1" />
-                <FullNameInput v-model:name="form.name2" v-model:kana="form.name2kana" placeholder="連名2" />
-                <FullNameInput v-model:name="form.name3" v-model:kana="form.name3kana" placeholder="連名3" />
-                <FullNameInput v-model:name="form.name4" v-model:kana="form.name4kana" placeholder="連名4" />
-                </div>
+                <div class="my-4">
+                    <FullNameInput v-model:name="form.name1" v-model:kana="form.name1kana" id="name1" placeholder="連名1" />
+                    <FullNameInput v-model:name="form.name2" v-model:kana="form.name2kana" id="name2" placeholder="連名2" />
+                    <FullNameInput v-model:name="form.name3" v-model:kana="form.name3kana" id="name3" placeholder="連名3" />
+                    <FullNameInput v-model:name="form.name4" v-model:kana="form.name4kana" id="name4" placeholder="連名4" />
+                </div> 
             </div>
             <div>
                 <label for="flag"><span class="font-mincho text-[24px] mr-2">いずれかをお選びください</span><Badge>必須</Badge></label>
-                <div id="flag">
-                <RadioButton :items="flags" v-model="form.flag" :id="'flag1'" :name="'flag'" />
+                <div id="flag" class="my-4">
+                    <RadioButton :items="flags" v-model="form.flag" :id="'flag1'" :name="'flag'" />
                 </div>
             </div>
             <div>
                 <label for="mailaddress"><span class="font-mincho text-[24px]">メールアドレス</span></label>
-                <div id="mailaddress" class="grid grid-cols-1">
-                <Input :v-model="form.mailaddress" placeholder="mail@mail.com"/>
+                <div id="mailaddress" class="my-4 grid grid-cols-1">
+                    <Input :v-model="form.mailaddress" placeholder="mail@mail.com"/>
                 </div>
             </div>
             <div>
                 <label><span class="font-mincho text-[24px]">ご住所</span></label>
-                <div class="grid grid-cols-1">
-                <AddressInput v-model:zipcode="form.zipcode" v-model:address1="form.city" v-model:address2="form.address2" v-model:address3="form.address3" />
+                <div class="my-4 grid grid-cols-1">
+                    <AddressInput v-model:zipcode="form.zipcode" v-model:address1="form.city" v-model:address2="form.address2" v-model:address3="form.address3" />
                 </div>
             </div>
             <div>
                 <label for="allergy"><span class="font-mincho text-[24px]">アレルギーについて</span></label>
-                <div id="allergy">
-                <p id="allergy-helper-text" class="font-mincho break-keep">アレルギーなど<wbr />食べられないものが<wbr />ございましたら、<wbr />ご遠慮なく<wbr />お書き添えください</p>
-                <textarea class="m-1 h-[170px] border-1 border-[#C0E5D4] outline-[#C0E5D4] rounded-[6px]" aria-describedby="allergy-helper-text"></textarea>
+                <div id="allergy" class="my-4">
+                    <p id="allergy-helper-text" class="font-mincho break-keep">アレルギーなど<wbr />食べられないものが<wbr />ございましたら、<wbr />ご遠慮なく<wbr />お書き添えください</p>
+                    <textarea class="m-1 h-[170px] w-full border-1 border-[#C0E5D4] rounded-[6px] focus:border-3 outline-[#C0E5D4] text-[20px] font-mincho" aria-describedby="allergy-helper-text"></textarea>
                 </div>
             </div>
             <div class="flex justify-center">

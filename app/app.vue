@@ -69,7 +69,7 @@ textsRes.json().then((texts) => {
             </div>
         </div>
         <div class="col-span-1 mw-[750px] h-[100vh] overflow-x-auto">
-          <div class="grid grid-cols-10">
+          <div class="top grid grid-cols-10">
             <NuxtImg :src="state.images.top" class="col-span-9" width="329" height="409"/>
             <div class="col-span-1 w-full">
               <span class="[writing-mode:vertical-rl] font-jost text-[#FCDADA]">
@@ -129,7 +129,7 @@ textsRes.json().then((texts) => {
             <div>
               <p class="text-center font-cursive text-[60px] tracking-tighter">Information</p>
             </div>
-            <dl class="font-mincho text-[20px] pb-2">
+            <dl class="font-mincho text-[20px] mb-4">
               <div class="grid grid-cols-5 pb-2">
                 <dt class="col-span-2 mx-10" style="text-align-last: justify;">日時</dt>
                 <dd class="col-span-3">{{ state.texts.information_datetime }}</dd>
@@ -159,7 +159,7 @@ textsRes.json().then((texts) => {
                 <dd class="col-span-3">{{ state.texts.information_number }}</dd>
               </div>
             </dl>
-            <div>
+            <div class="m-4">
               <BasicMap :position="{ lat: 35.685355, lng: 139.753144 }" :zoom="14" />
             </div>
           </div>
@@ -218,6 +218,9 @@ textsRes.json().then((texts) => {
   </main>
 </template>
 <style>
+.top {
+  background-color: #EEFFF7;
+}
 .greeting {
   background-color: #EEFFF7;
 }

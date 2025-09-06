@@ -1,11 +1,12 @@
 <template>
     <div class="grid grid-cols-4">
-        <div class="col-span-3">
-            <label for="zipcode1" class="font-mincho">〒</label>
-            <input type="text" class="m-1 h-[60px] border-1 border-[#C0E5D4] outline-[#C0E5D4] rounded-[6px] placeholder:font-mincho" id="zipcode1" placeholder="1234567" v-model="zipcode" @input="searchAddress">
+        <div class="flex col-span-3 flex-nowrap">
+            <label for="zipcode1" class="flex font-mincho text-[20px] items-center">〒</label>
+            <input type="text" class="m-1 w-full h-[60px] border-1 border-[#C0E5D4] rounded-[6px] focus:border-3 outline-[#C0E5D4] text-[20px] font-mincho text-center" id="zipcode1" placeholder="1234567" v-model="zipcode" @input="searchAddress">
         </div>
         <div class="col-span-3">
-            <select class="m-1 h-[60px] border-1 border-[#C0E5D4] outline-[#C0E5D4] rounded-[6px] placeholder:font-mincho" placeholder="都道府県" v-model="address1">
+            <select class="m-1 w-full h-[60px] border-1 border-[#C0E5D4] rounded-[6px] focus:border-3 outline-[#C0E5D4] text-[20px] font-mincho text-center" placeholder="都道府県" v-model="address1">
+                <option value="">都道府県</option>
                 <option value="北海道">北海道</option>
                 <option value="青森県">青森県</option>
                 <option value="岩手県">岩手県</option>
@@ -56,10 +57,10 @@
             </select>
         </div>
         <div class="col-span-4">
-            <Input placeholder="市区町村・番地" v-model="address2" />
+            <Input class="w-full" placeholder="市区町村・番地" v-model="address2" />
         </div>
         <div class="col-span-4">
-            <Input placeholder="マンション・建物名" v-model="address3" />
+            <Input class="w-full" placeholder="マンション・建物名" v-model="address3" />
         </div>
     </div>
 </template>
