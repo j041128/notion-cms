@@ -26,5 +26,13 @@ export default defineNuxtConfig({
       }
 
     }
+  },
+  routeRules: {
+    '/api/gallery': {
+      ssr: false,
+    },
+    '/api/proxy/**': {
+      ssr: false,
+    }
   }
 })
