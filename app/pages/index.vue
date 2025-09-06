@@ -143,6 +143,7 @@ const handleFormSubmit = async () => {
             router.push('/thanks');
             break;
         default:
+            console.log(res);
             break;
     }
 }
