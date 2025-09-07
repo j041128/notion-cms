@@ -80,8 +80,8 @@ const scrollToNearbyInvitation = () => {
                   </div>
                 </div>
                 <div class="flex justify-center">
-                  <button class="py-[28px] px-[81px] rounded-full shadow-md bg-[#D7F0E5] disabled:bg-[#D9D9D9] disabled:text-white" @click="scrollToNearbyInvitation()">
-                    <span class="font-mincho text-[36px]">招待状に回答する</span>
+                  <button class="py-[24px] px-[80px] rounded-full shadow-md bg-[#FCDADA] disabled:bg-[#D9D9D9] disabled:text-white" @click="scrollToNearbyInvitation()">
+                    <span class="font-mincho text-[24px]">招待状に回答する</span>
                   </button>
                 </div>
               </div>
@@ -267,13 +267,15 @@ html {
 body {
   height: 100%;
   margin: 0;
-  overflow-x: hidden;
   background-color: #FFFBE5;
   background-image: linear-gradient(0deg, transparent calc(100% - 2px), #F5DAF6 calc(100% - 2px)),
                     linear-gradient(90deg, transparent calc(100% - 2px), #F5DAF6 calc(100% - 2px));
   background-size: 66px 66px;
   background-repeat: repeat;
   background-position: center center;
+}
+main {
+  overflow-x: hidden;
 }
 .top {
   background-color: #EEFFF7;

@@ -69,8 +69,8 @@
                 </div>
             </div>
             <div class="flex justify-center">
-                <button class="py-[28px] px-[81px] rounded-full shadow-md bg-[#D7F0E5] disabled:bg-[#D9D9D9] disabled:text-white" :disabled="checkRequired()" @click="handleFormSubmit()">
-                    <span class="font-mincho text-[28px]">招待状に回答する</span>
+                <button class="py-[24px] px-[80px] rounded-full shadow-md bg-[#D7F0E5] disabled:bg-[#D9D9D9] disabled:text-white" :disabled="checkRequired()" @click="handleFormSubmit()">
+                    <span class="font-mincho text-[24px]">招待状に回答する</span>
                 </button>
             </div>
         </div>
