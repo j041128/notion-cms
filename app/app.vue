@@ -94,12 +94,12 @@ const scrollToNearbyInvitation = () => {
             </div>
           </div>
         </div>
-        <div class="col-span-1 mw-[750px] smartphone:w-[500px] h-[100dvh] overflow-x-auto box-border" ref="smartphone">
+        <div class="col-span-1 mw-[750px] smartphone:w-[500px] h-[100dvh] box-border" ref="smartphone">
           <div class="relative">
             <div class="top grid grid-cols-10">
               <NuxtImg :src="state.images.top" class="col-span-9 w-full" width="329" height="409"/>
-              <div class="col-span-1 w-full">
-                <span class="[writing-mode:vertical-rl] font-jost text-[#FCDADA]">
+              <div class="col-span-1">
+                <span class="w-[99%] [writing-mode:vertical-rl] font-jost text-[#FCDADA]">
                   <span class="mx-[22px]">
                     <span class="text-[24px]">{{ state.texts.top_name }}</span>
                   </span>
@@ -205,18 +205,39 @@ const scrollToNearbyInvitation = () => {
             <div class="m-4">
               <BasicMap :position="{ lat: Number(state.texts.information_lat), lng: Number(state.texts.information_lng) }" :zoom="16" :name="state.texts.information_place" />
             </div>
+            <div>
+              <div class="font-mincho text-center text-[20px] py-8">
+                <p>{{ state.texts.invitation_paragraph1 }}</p>
+                <p>
+                  <span>{{ state.texts.invitation_paragraph2_1 }}</span>
+                  <span class="text-[#FF8F89] text-[26px]">{{ state.texts.invitation_paragraph2_2 }}</span>
+                  <span>{{ state.texts.invitation_paragraph2_3 }}</span>
+                </p>
+                <p>{{ state.texts.invitation_paragraph3 }}</p>
+              </div>
+              <div class="flex justify-center">
+                <button class="py-[24px] px-[62px] rounded-full shadow-md bg-[#FFFF] disabled:bg-[#D9D9D9] disabled:text-white" @click="scrollToNearbyInvitation()">
+                  <span class="font-mincho text-[24px]">招待状に回答する</span>
+                </button>
+              </div>
+            </div>
           </div>
           <div class="relative">
-            <ImageOnContent>
-              <template v-slot:image>
-                <NuxtImg :src="state.images.profile" class="image" />
-              </template>
-              <template v-slot:content>
-                <div class="flex w-full h-full items-center justify-center">
-                    <p class="font-cursive text-white text-[80px]">profile</p>
-                </div>
-              </template>
-            </ImageOnContent>
+            <div class="relative">
+              <ImageOnContent>
+                <template v-slot:image>
+                  <NuxtImg :src="state.images.profile" class="image" />
+                </template>
+                <template v-slot:content>
+                  <div class="flex w-full h-full items-center justify-center">
+                      <p class="font-cursive text-white text-[80px]">profile</p>
+                  </div>
+                </template>
+              </ImageOnContent>
+              <div class="absolute top-[-15%]">
+                <NuxtImg src="/img/jewel9.png" width="108px" height="92px" />
+              </div>
+            </div>
             <div class="absolute top-[85%] left-[76%]">
               <NuxtImg src="/img/jewel4.png" width="108px" height="92px" />
             </div>
