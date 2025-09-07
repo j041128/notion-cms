@@ -20,7 +20,7 @@
                 <NuxtImg src="/img/jewel1.png" width="116px" height="108px" />
             </div>
         </div>
-        <div class="m-4">
+        <div class="p-4">
             <label for="attendance"><span class="font-mincho text-[24px] mr-2">ご出欠</span><Badge>必須</Badge></label>
             <div id="attendance" class="my-4">
                 <RadioButton :items="attendances" v-model="form.attendance" :id="'attendance1'" :name="'attendance'" />
@@ -69,7 +69,7 @@
                 </div>
             </div>
             <div class="flex justify-center">
-                <button class="py-[24px] px-[80px] rounded-full shadow-md bg-[#D7F0E5] disabled:bg-[#D9D9D9] disabled:text-white" :disabled="checkRequired()" @click="handleFormSubmit()">
+                <button class="py-[24px] px-[62px] rounded-full shadow-md bg-[#D7F0E5] disabled:bg-[#D9D9D9] disabled:text-white" :disabled="checkRequired()" @click="handleFormSubmit()">
                     <span class="font-mincho text-[24px]">招待状に回答する</span>
                 </button>
             </div>
