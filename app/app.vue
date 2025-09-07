@@ -1,5 +1,6 @@
 <script setup>
 import { useRuntimeConfig } from 'nuxt/app';
+import { useTemplateRef } from 'vue'
 
 const state = reactive({
   images: [],
@@ -17,6 +18,16 @@ const textsRes = await fetch(config.public.NUXT_APP_URL + "/api/text");
 textsRes.json().then((texts) => {
   state.texts = texts;
 });
+
+const smartphone = useTemplateRef('smartphone');
+const horizon = useTemplateRef('horizon');
+
+const scrollToNearbyInvitation = () => {
+  var rect = horizon.value.getBoundingClientRect();
+  var position = rect.top;
+
+  smartphone.value.scrollTo(0, position);
+}
 </script>
 
 <template>
@@ -69,9 +80,9 @@ textsRes.json().then((texts) => {
                   </div>
                 </div>
                 <div class="flex justify-center">
-                  <NuxtLink class="py-[28px] px-[81px] rounded-full shadow-md bg-[#D7F0E5] disabled:bg-[#D9D9D9] disabled:text-white" to="#invitaion">
+                  <button class="py-[28px] px-[81px] rounded-full shadow-md bg-[#D7F0E5] disabled:bg-[#D9D9D9] disabled:text-white" @click="scrollToNearbyInvitation()">
                     <span class="font-mincho text-[36px]">招待状に回答する</span>
-                  </NuxtLink>
+                  </button>
                 </div>
               </div>
               <div class="absolute top-[80%] left-[-5%]">
@@ -83,7 +94,7 @@ textsRes.json().then((texts) => {
             </div>
           </div>
         </div>
-        <div class="col-span-1 mw-[750px] h-[100dvh] overflow-x-auto box-border">
+        <div class="col-span-1 mw-[750px] h-[100dvh] overflow-x-auto box-border" ref="smartphone">
           <div class="relative">
             <div class="top grid grid-cols-10">
               <NuxtImg :src="state.images.top" class="col-span-9 w-full" width="329" height="409"/>
@@ -242,7 +253,7 @@ textsRes.json().then((texts) => {
               </div>
             </div>
           </div>
-          <hr class="text-[#F5DAF6] border-8">
+          <hr class="text-[#F5DAF6] border-8" ref="horizon">
           <NuxtPage />
         </div>
       </div>

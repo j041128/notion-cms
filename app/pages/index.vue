@@ -1,5 +1,5 @@
 <template>
-    <div class="invitation" id="invitaion">
+    <div class="invitation">
         <div class="relative">
             <ImageOnContent>
                 <template v-slot:image>
