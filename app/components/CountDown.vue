@@ -2,7 +2,7 @@
     <div>
         <div>
             <span class="text-white font-jost text-[72px]">{{ days }}</span>
-            <span class="text-white font-cursive text-[32px]">Days</span>
+            <span class="text-white font-cursive italic text-[32px]">days</span>
         </div>
         <div class="grid grid-cols-3">
             <div class="grid grid-cpls-1">

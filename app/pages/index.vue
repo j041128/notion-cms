@@ -1,21 +1,26 @@
 <template>
-    <div class="invitation" id="invitation">
-        <ImageOnContent>
-            <template v-slot:image>
-                <svg width="375" height="160" viewBox="0 0 375 160" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <ellipse cx="188" cy="11.5" rx="221" ry="148.5" transform="rotate(180 188 11.5)" fill="#FFFCE7"/>
-                </svg>
-            </template>
-            <template v-slot:content>
-                <div class="flex w-full h-full items-center justify-center">
-                    <div class="text-center leading-none">
-                        <p class="font-cursive text-[60px] text-[#EEB0F0]">Invitation</p>
-                        <p class="font-mincho text-[24px]">ご入力ください</p>
+    <div class="invitation" id="invitaion">
+        <div class="relative">
+            <ImageOnContent>
+                <template v-slot:image>
+                    <svg viewBox="0 0 375 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <ellipse cx="188" cy="11.5" rx="221" ry="148.5" transform="rotate(180 188 11.5)" fill="#FFFCE7"/>
+                    </svg>
+                </template>
+                <template v-slot:content>
+                    <div class="flex w-full h-full items-center justify-center">
+                        <div class="text-center leading-none">
+                            <p class="font-cursive text-[60px] text-[#EEB0F0]">Invitation</p>
+                            <p class="font-mincho text-[24px]">ご入力ください</p>
+                        </div>
                     </div>
-                </div>
-            </template>
-        </ImageOnContent>
-        <div class="mx-2">
+                </template>
+            </ImageOnContent>
+            <div class="absolute top-[65%]">
+                <NuxtImg src="/img/jewel1.png" />
+            </div>
+        </div>
+        <div class="m-4">
             <label for="attendance"><span class="font-mincho text-[24px] mr-2">ご出欠</span><Badge>必須</Badge></label>
             <div id="attendance" class="my-4">
                 <RadioButton :items="attendances" v-model="form.attendance" :id="'attendance1'" :name="'attendance'" />

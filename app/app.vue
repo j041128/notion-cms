@@ -21,7 +21,7 @@ textsRes.json().then((texts) => {
 
 <template>
   <main>
-    <div class="bg-[#FFFBE5]">
+    <div>
       <div class="grid m-auto grid-cols-1 smartphone:grid-cols-3 smartphone:w-[1440px]">
         <div class="hidden smartphone:block smartphone:col-span-2 box">
             <div class="leading-none">
@@ -89,7 +89,7 @@ textsRes.json().then((texts) => {
               <NuxtImg src="/img/jewel1.png" />
             </div>
           </div>
-          <div class="greeting py-[40px]">
+          <div class="greeting">
             <div class="relative">
               <div class="leading-none">
                 <p class="text-center text-[#FF8F89] font-jost text-[30px] ">WEDDING</p>
@@ -99,27 +99,29 @@ textsRes.json().then((texts) => {
                 <NuxtImg src="/img/jewel2.png" />
               </div>
             </div>
-            <div class="pb-8">
-              <p class="text-center font-mincho">{{ state.texts.greeting_acronym }}</p>
-            </div>
-            <div class="pb-10">
-              <p class="text-center font-mincho">{{ state.texts.greeting_paragraph1 }}</p>
-              <p class="text-center font-mincho">{{ state.texts.greeting_paragraph2 }}</p>
-              <p class="text-center font-mincho">{{ state.texts.greeting_paragraph3 }}</p>
-              <p class="text-center font-mincho">{{ state.texts.greeting_paragraph4 }}</p>
-              <p class="text-center font-mincho">{{ state.texts.greeting_paragraph5 }}</p>
-              <p class="text-center font-mincho">{{ state.texts.greeting_paragraph6 }}</p>
-              <p class="text-center font-mincho">{{ state.texts.greeting_paragraph7 }}</p>
-              <p class="text-center font-mincho">{{ state.texts.greeting_paragraph8 }}</p>
-              <p class="text-center font-mincho">{{ state.texts.greeting_paragraph9 }}</p>
-            </div>
-            <div class="pb-8">
-              <p class="text-center font-mincho">{{ state.texts.greeting_backronyum }}</p>
-              <p class="text-center font-mincho">{{ state.texts.greeting_date }}</p>
-            </div>
-            <div>
-              <p class="text-center font-mincho">{{ state.texts.greeting_groom }}</p>
-              <p class="text-center font-mincho">{{ state.texts.greeting_bride }}</p>
+            <div class="py-10">
+              <div class="pb-8">
+                <p class="text-center font-mincho">{{ state.texts.greeting_acronym }}</p>
+              </div>
+              <div class="pb-10">
+                <p class="text-center font-mincho">{{ state.texts.greeting_paragraph1 }}</p>
+                <p class="text-center font-mincho">{{ state.texts.greeting_paragraph2 }}</p>
+                <p class="text-center font-mincho">{{ state.texts.greeting_paragraph3 }}</p>
+                <p class="text-center font-mincho">{{ state.texts.greeting_paragraph4 }}</p>
+                <p class="text-center font-mincho">{{ state.texts.greeting_paragraph5 }}</p>
+                <p class="text-center font-mincho">{{ state.texts.greeting_paragraph6 }}</p>
+                <p class="text-center font-mincho">{{ state.texts.greeting_paragraph7 }}</p>
+                <p class="text-center font-mincho">{{ state.texts.greeting_paragraph8 }}</p>
+                <p class="text-center font-mincho">{{ state.texts.greeting_paragraph9 }}</p>
+              </div>
+              <div class="pb-8">
+                <p class="text-center font-mincho">{{ state.texts.greeting_backronyum }}</p>
+                <p class="text-center font-mincho">{{ state.texts.greeting_date }}</p>
+              </div>
+              <div>
+                <p class="text-center font-mincho">{{ state.texts.greeting_groom }}</p>
+                <p class="text-center font-mincho">{{ state.texts.greeting_bride }}</p>
+              </div>
             </div>
           </div>
           <div class="relative">
@@ -130,9 +132,9 @@ textsRes.json().then((texts) => {
               <template v-slot:content>
                 <div class="grid-rows-3 leading-none">
                   <div class="flex justify-center">
-                    <span class="font-jost text-white text-[28px]">countdown</span>
+                    <span class="font-jost text-white text-[28px]">COUNT DOWN</span>
                   </div>
-                  <CountDown />
+                  <CountDown :today="state.texts.countdown_today" />
                 </div>
               </template>
             </ImageOnContent>
@@ -142,9 +144,9 @@ textsRes.json().then((texts) => {
           </div>
           <div class="information py-[40px]">
             <div>
-              <p class="text-center font-cursive text-[60px] tracking-tighter">Information</p>
+              <p class="text-center font-cursive italic text-[60px] tracking-tighter">Information</p>
             </div>
-            <dl class="font-mincho text-[20px] mb-4">
+            <dl class="font-mincho text-[20px] mb-8">
               <div class="grid grid-cols-5 pb-2">
                 <dt class="col-span-2 mx-10" style="text-align-last: justify;">日時</dt>
                 <dd class="col-span-3">{{ state.texts.information_datetime }}</dd>
@@ -175,7 +177,7 @@ textsRes.json().then((texts) => {
               </div>
             </dl>
             <div class="m-4">
-              <BasicMap :position="{ lat: 35.685355, lng: 139.753144 }" :zoom="14" />
+              <BasicMap :position="{ lat: Number(state.texts.information_lat), lng: Number(state.texts.information_lng) }" :zoom="14" :name="state.texts.information_place" />
             </div>
           </div>
           <div class="relative">
@@ -233,6 +235,19 @@ textsRes.json().then((texts) => {
   </main>
 </template>
 <style>
+html {
+  height: 100%;
+}
+body {
+  height: 100%;
+  margin: 0;
+  background-color: #FFFBE5;
+  background-image: linear-gradient(0deg, transparent calc(100% - 2px), #F5DAF6 calc(100% - 2px)),
+                    linear-gradient(90deg, transparent calc(100% - 2px), #F5DAF6 calc(100% - 2px));
+  background-size: 66px 66px;
+  background-repeat: repeat;
+  background-position: center center;
+}
 .top {
   background-color: #EEFFF7;
 }
@@ -248,17 +263,8 @@ textsRes.json().then((texts) => {
 .invitation {
   background-color: #FFFFFF;
 }
-.curve {
-  overflow: hidden;
-
-  
-}
-.box {
-  background-image: linear-gradient(0deg, transparent calc(100% - 2px), #F5DAF6 calc(100% - 2px)),
-                    linear-gradient(90deg, transparent calc(100% - 2px), #F5DAF6 calc(100% - 2px));
-  background-size: 66px 66px;
-  background-repeat: repeat;
-  background-position: center center;
+.thanks {
+  background-color: #FFFFFF;
 }
 .mask-img-top-bottom {
   --mask:

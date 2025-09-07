@@ -12,6 +12,7 @@ type Position = { lat: number, lng: number }
 const props = defineProps<{
     position: Position
     zoom?: number
+    name?: string
 }>();
 
 const config = useRuntimeConfig();
@@ -35,11 +36,17 @@ onMounted(() => {
         const { Map } = await maps.importLibrary('maps') as google.maps.MapsLibrary
 
         // Google Map のインスタンスを生成して DOM に描画
-        new Map(mapRef.value, {
+        const map = new Map(mapRef.value, {
             center: props.position,
             zoom: props.zoom ?? 8,
             mapId: config.public.googleMaps.mapId,
         });
+
+        const marker = new maps.Marker({
+            position: props.position,
+            map: map,
+            title: props.name,
+        })
     });
 });
 </script>
