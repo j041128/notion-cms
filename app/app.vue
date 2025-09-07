@@ -68,7 +68,7 @@ textsRes.json().then((texts) => {
               <button class="py-[36px] px-[81px] rounded-full shadow-md bg-[#D7F0E5] disabled:bg-[#D9D9D9] disabled:text-white" href="#invitation"><span class="font-mincho text-[36px]">招待状に回答する</span></button>
             </div>
         </div>
-        <div class="col-span-1 mw-[750px] h-[100vh] overflow-x-auto box-border">
+        <div class="col-span-1 mw-[750px] h-[100dvh] overflow-x-auto box-border">
           <div class="relative">
             <div class="top grid grid-cols-10">
               <NuxtImg :src="state.images.top" class="col-span-9 w-full" width="329" height="409"/>
