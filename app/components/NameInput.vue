@@ -5,8 +5,8 @@
             <Input id="name_last" v-model="last" class="placeholder:text-center" placeholder="名" @input="handleLastNameInput" />
         </div>
         <div class="grid grid-cols-2">
-            <Input v-model="firstkana" class="placeholder:text-center" placeholder="姓" />
-            <Input v-model="lastkana" class="placeholder:text-center" placeholder="名" />
+            <Input v-model="firstkana" class="placeholder:text-center" placeholder="姓：かな" />
+            <Input v-model="lastkana" class="placeholder:text-center" placeholder="名：かな" />
         </div>
     </div>
 </template>

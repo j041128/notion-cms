@@ -2,7 +2,7 @@
     <div>
         <div class="grid grid-cols-2">
             <Input class="placeholder:text-center" v-model="name" :placeholder="placeholder" :id="id" @input="handleNameInput" />
-            <Input class="placeholder:text-center" v-model="kana" :placeholder="placeholder + '：ふりがな'" />
+            <Input class="placeholder:text-center" v-model="kana" :placeholder="placeholder + '：かな'" />
         </div>
     </div>
 </template>
