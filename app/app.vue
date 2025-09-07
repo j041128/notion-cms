@@ -33,8 +33,8 @@ const scrollToNearbyInvitation = () => {
 <template>
   <main>
     <div>
-      <div class="grid m-auto grid-cols-1 smartphone:grid-cols-3 smartphone:w-[1440px]">
-        <div class="hidden smartphone:block smartphone:col-span-2">
+      <div class="grid m-auto grid-cols-1 smartphone:grid-cols-3 mw-[750px] smartphone:mw-[1440px]">
+        <div class="hidden w-full mw-[600px] smartphone:block smartphone:col-span-2">
           <div class="relative">
             <div class="relative">
               <div>
@@ -94,7 +94,7 @@ const scrollToNearbyInvitation = () => {
             </div>
           </div>
         </div>
-        <div class="col-span-1 mw-[750px] h-[100dvh] overflow-x-auto box-border" ref="smartphone">
+        <div class="col-span-1 mw-[750px] smartphone:w-[500px] h-[100dvh] overflow-x-auto box-border" ref="smartphone">
           <div class="relative">
             <div class="top grid grid-cols-10">
               <NuxtImg :src="state.images.top" class="col-span-9 w-full" width="329" height="409"/>
@@ -115,9 +115,9 @@ const scrollToNearbyInvitation = () => {
               <NuxtImg src="/img/jewel1.png" width="116px" height="108px" />
             </div>
           </div>
-          <div class="greeting">
+          <div class="greeting py-10">
             <div class="relative">
-              <div class="leading-none">
+              <div class="leading-none pb-10">
                 <p class="text-center text-[#FF8F89] font-jost text-[30px] ">WEDDING</p>
                 <p class="text-center text-[#FF89A9] font-cursive text-[64px] ">Invitation</p>
               </div>
@@ -125,7 +125,7 @@ const scrollToNearbyInvitation = () => {
                 <NuxtImg src="/img/jewel2.png" width="112px" height="114" />
               </div>
             </div>
-            <div class="py-10">
+            <div>
               <div class="pb-8">
                 <p class="text-center font-mincho">{{ state.texts.greeting_acronym }}</p>
               </div>
@@ -203,7 +203,7 @@ const scrollToNearbyInvitation = () => {
               </div>
             </dl>
             <div class="m-4">
-              <BasicMap :position="{ lat: Number(state.texts.information_lat), lng: Number(state.texts.information_lng) }" :zoom="28" :name="state.texts.information_place" />
+              <BasicMap :position="{ lat: Number(state.texts.information_lat), lng: Number(state.texts.information_lng) }" :zoom="16" :name="state.texts.information_place" />
             </div>
           </div>
           <div class="relative">
@@ -267,6 +267,7 @@ html {
 body {
   height: 100%;
   margin: 0;
+  overflow-x: hidden;
   background-color: #FFFBE5;
   background-image: linear-gradient(0deg, transparent calc(100% - 2px), #F5DAF6 calc(100% - 2px)),
                     linear-gradient(90deg, transparent calc(100% - 2px), #F5DAF6 calc(100% - 2px));

@@ -16,12 +16,12 @@
                         </div>
                     </template>
                 </ImageOnContent>
-                <div class="absolute top-[1%] left-[80%] ">
-                    <NuxtImg src="/img/jewel5.png" />
+                <div class="absolute top-[-1%] rotate-180">
+                    <NuxtImg src="/img/jewel5.png" width="74px" height="76px" />
                 </div>
             </div>
-            <div class="absolute top-[65%]">
-                <NuxtImg src="/img/jewel1.png" />
+            <div class="absolute top-[65%] left-[76%]">
+                <NuxtImg src="/img/jewel1.png" width="116px" height="108px" />
             </div>
         </div>
         <div>
