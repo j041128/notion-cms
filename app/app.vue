@@ -23,50 +23,65 @@ textsRes.json().then((texts) => {
   <main>
     <div>
       <div class="grid m-auto grid-cols-1 smartphone:grid-cols-3 smartphone:w-[1440px]">
-        <div class="hidden smartphone:block smartphone:col-span-2 box">
-            <div class="leading-none">
-              <p class="text-center text-[#FCDADA] font-jost text-[30px] ">WEDDING</p>
-              <p class="text-center text-[#FCDADA] font-cursive text-[64px] ">Invitation</p>
-            </div>
-            <div class="grid grid-cols-5">
-              <div class="col-span-2">
+        <div class="hidden smartphone:block smartphone:col-span-2">
+          <div class="relative">
+            <div class="relative">
+              <div>
+                <div class="leading-none mt-[60px] mb-[30px]">
+                  <p class="text-center text-[#FCDADA] font-jost text-[66px] ">WEDDING</p>
+                  <p class="text-center text-[#FCDADA] font-cursive text-[145px] tracking-tighter">Invitation</p>
+                </div>
+                <div class="grid grid-cols-5 mb-[60px]">
+                  <div class="flex justify-center col-span-2">
+                    <NuxtImg :src="state.images.photos" width="250px" height="330px" />
+                  </div>
+                  <div class="col-span-3">
+                    <dl class="font-mincho text-[20px] pb-2">
+                      <div class="grid grid-cols-5 pb-2">
+                        <dt class="col-span-2 mx-10" style="text-align-last: justify;">日時</dt>
+                        <dd class="col-span-3">{{ state.texts.information_datetime }}</dd>
+                      </div>
+                      <div class="grid grid-cols-5 pb-2">
+                        <dt class="col-span-2 mx-10" style="text-align-last: justify;">受付</dt>
+                        <dd class="col-span-3">{{ state.texts.information_entry }}</dd>
+                      </div>
+                      <div class="grid grid-cols-5 pb-2">
+                        <dt class="col-span-2 mx-10" style="text-align-last: justify;">挙式</dt>
+                        <dd class="col-span-3">{{ state.texts.information_ceremony }}</dd>
+                      </div>
+                      <div class="grid grid-cols-5 pb-2">
+                        <dt class="col-span-2 mx-10" style="text-align-last: justify;">披露宴</dt>
+                        <dd class="col-span-3">{{ state.texts.information_reception }}</dd>
+                      </div>
+                      <div class="grid grid-cols-5 pb-2">
+                        <dt class="col-span-2 mx-10" style="text-align-last: justify;">場所</dt>
+                        <dd class="col-span-3">{{ state.texts.information_place }}</dd>
+                      </div>
+                      <div class="grid grid-cols-5 pb-2">
+                        <dt class="col-span-2 mx-10" style="text-align-last: justify;">住所</dt>
+                        <dd class="col-span-3">{{ state.texts.information_address }}</dd>
+                      </div>
+                      <div class="grid grid-cols-5 pb-2">
+                        <dt class="col-span-2 mx-10" style="text-align-last: justify;">電話番号</dt>
+                        <dd class="col-span-3">{{ state.texts.information_number }}</dd>
+                      </div>
+                    </dl>
+                  </div>
+                </div>
+                <div class="flex justify-center">
+                  <NuxtLink class="py-[28px] px-[81px] rounded-full shadow-md bg-[#D7F0E5] disabled:bg-[#D9D9D9] disabled:text-white" to="#invitaion">
+                    <span class="font-mincho text-[36px]">招待状に回答する</span>
+                  </NuxtLink>
+                </div>
               </div>
-              <div class="col-span-3">
-                <dl class="font-mincho text-[20px] pb-2">
-                  <div class="grid grid-cols-5 pb-2">
-                    <dt class="col-span-2 mx-10" style="text-align-last: justify;">日時</dt>
-                    <dd class="col-span-3">{{ state.texts.information_datetime }}</dd>
-                  </div>
-                  <div class="grid grid-cols-5 pb-2">
-                    <dt class="col-span-2 mx-10" style="text-align-last: justify;">受付</dt>
-                    <dd class="col-span-3">{{ state.texts.information_entry }}</dd>
-                  </div>
-                  <div class="grid grid-cols-5 pb-2">
-                    <dt class="col-span-2 mx-10" style="text-align-last: justify;">挙式</dt>
-                    <dd class="col-span-3">{{ state.texts.information_ceremony }}</dd>
-                  </div>
-                  <div class="grid grid-cols-5 pb-2">
-                    <dt class="col-span-2 mx-10" style="text-align-last: justify;">披露宴</dt>
-                    <dd class="col-span-3">{{ state.texts.information_reception }}</dd>
-                  </div>
-                  <div class="grid grid-cols-5 pb-2">
-                    <dt class="col-span-2 mx-10" style="text-align-last: justify;">場所</dt>
-                    <dd class="col-span-3">{{ state.texts.information_place }}</dd>
-                  </div>
-                  <div class="grid grid-cols-5 pb-2">
-                    <dt class="col-span-2 mx-10" style="text-align-last: justify;">住所</dt>
-                    <dd class="col-span-3">{{ state.texts.information_address }}</dd>
-                  </div>
-                  <div class="grid grid-cols-5 pb-2">
-                    <dt class="col-span-2 mx-10" style="text-align-last: justify;">電話番号</dt>
-                    <dd class="col-span-3">{{ state.texts.information_number }}</dd>
-                  </div>
-                </dl>
+              <div class="absolute top-[80%] left-[-5%]">
+                <NuxtImg src="/img/jewel8.png" width="215px" height="263px" />
               </div>
             </div>
-            <div class="flex justify-center">
-              <button class="py-[36px] px-[81px] rounded-full shadow-md bg-[#D7F0E5] disabled:bg-[#D9D9D9] disabled:text-white" href="#invitation"><span class="font-mincho text-[36px]">招待状に回答する</span></button>
+            <div class="absolute top[65%] left-[75%]">
+              <NuxtImg :src="state.images.thanks" width="212" height="110" />
             </div>
+          </div>
         </div>
         <div class="col-span-1 mw-[750px] h-[100dvh] overflow-x-auto box-border">
           <div class="relative">
@@ -85,8 +100,8 @@ textsRes.json().then((texts) => {
                 </span>
               </div>
             </div>
-            <div class="absolute top-[90%] left-[85%]">
-              <NuxtImg src="/img/jewel1.png" />
+            <div class="absolute top-[90%] left-[74%]">
+              <NuxtImg src="/img/jewel1.png" width="116px" height="108px" />
             </div>
           </div>
           <div class="greeting">
@@ -96,7 +111,7 @@ textsRes.json().then((texts) => {
                 <p class="text-center text-[#FF89A9] font-cursive text-[64px] ">Invitation</p>
               </div>
               <div class="absolute top-[90%] left-[0%]">
-                <NuxtImg src="/img/jewel2.png" />
+                <NuxtImg src="/img/jewel2.png" width="112px" height="114" />
               </div>
             </div>
             <div class="py-10">
@@ -139,12 +154,12 @@ textsRes.json().then((texts) => {
               </template>
             </ImageOnContent>
             <div class="absolute top-[85%] left-[67%]">
-              <NuxtImg src="/img/jewel3.png" />
+              <NuxtImg src="/img/jewel3.png" width="209px" height="75px" />
             </div>
           </div>
           <div class="information py-[40px]">
             <div>
-              <p class="text-center font-cursive italic text-[60px] tracking-tighter">Information</p>
+              <p class="text-center font-cursive italic text-[60px] text-[#FF8F89] tracking-tighter">Information</p>
             </div>
             <dl class="font-mincho text-[20px] mb-8">
               <div class="grid grid-cols-5 pb-2">
@@ -177,7 +192,7 @@ textsRes.json().then((texts) => {
               </div>
             </dl>
             <div class="m-4">
-              <BasicMap :position="{ lat: Number(state.texts.information_lat), lng: Number(state.texts.information_lng) }" :zoom="14" :name="state.texts.information_place" />
+              <BasicMap :position="{ lat: Number(state.texts.information_lat), lng: Number(state.texts.information_lng) }" :zoom="28" :name="state.texts.information_place" />
             </div>
           </div>
           <div class="relative">
@@ -191,15 +206,15 @@ textsRes.json().then((texts) => {
                 </div>
               </template>
             </ImageOnContent>
-            <div class="absolute top-[85%] left-[82%]">
-              <NuxtImg src="/img/jewel4.png" />
+            <div class="absolute top-[85%] left-[76%]">
+              <NuxtImg src="/img/jewel4.png" width="108px" height="92px" />
             </div>
           </div>
           <div class="profile py-[39px]">
             <div class="mx-15">
               <div class="grid grid-cols-2">
                 <div class="flex justify-center">
-                  <NuxtImg :src="state.images.groom" width="175" height="175" />
+                  <NuxtImg :src="state.images.groom" width="175px" height="175px" />
                 </div>
                 <div class="flex items-center justify-center">
                   <div>
@@ -219,7 +234,7 @@ textsRes.json().then((texts) => {
                   </div>
                 </div>
                 <div class="flex justify-center">
-                  <NuxtImg :src="state.images.bride" width="175" height="175" />
+                  <NuxtImg :src="state.images.bride" width="175px" height="175px" />
                 </div>
               </div>
               <div class="my-4">
