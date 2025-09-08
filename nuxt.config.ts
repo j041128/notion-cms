@@ -2,7 +2,19 @@
 import tailwindcss from "@tailwindcss/vite";
 
 export default defineNuxtConfig({
-  modules: ['@nuxt/fonts', '@nuxt/image', '@nuxt/scripts'],
+  app: {
+    head: {
+      meta: [
+        { name: 'robots', content: 'noindex' }
+      ]
+    }
+  },
+  modules: [
+    '@nuxt/fonts',
+    '@nuxt/image',
+    '@nuxt/scripts',
+    '@kgierke/nuxt-basic-auth'
+  ],
   compatibilityDate: '2025-07-15',
   css: ['~/assets/css/main.css'],
   devtools: { enabled: true },
@@ -24,7 +36,6 @@ export default defineNuxtConfig({
           apiKey: process.env.NUXT_PUBLIC_SCRIPTS_GOOGLE_MAPS_API_KEY
         }
       }
-
     }
   },
   routeRules: {
@@ -34,5 +45,14 @@ export default defineNuxtConfig({
     '/api/proxy/**': {
       ssr: false,
     }
-  }
+  },
+  basicAuth: {
+    users: [
+      {
+        username: process.env.AUTH_USERNAME,
+        password: process.env.AUTH_PASSWORD
+      },
+    ],
+    allowedRoutes: ["/api/*"]
+  },
 })
