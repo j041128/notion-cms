@@ -286,7 +286,7 @@ const scrollToNearbyInvitation = () => {
       </div>
     </div>
   </main>
-  <footer>
+  <footer class="bg-[#FFFFFF] smartphone:bg-transparent">
     ©︎ 2025 murase and nakai
   </footer>
 </template>
