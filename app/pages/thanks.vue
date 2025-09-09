@@ -26,7 +26,7 @@
         </div>
         <div>
             <div class="flex justify-center">
-                <NuxtImg :src="state.images.thanks" width="212" height="110"></NuxtImg>
+                <NuxtImg :src="state.texts.url_thanks" width="212" height="110"></NuxtImg>
             </div>
             <div class="m-2 leading-8">
                 <p class="font-mincho text-center">送信完了しました。</p>
@@ -38,14 +38,14 @@
 
 <script setup>
 const state = reactive({
-  images: []
+  texts: []
 });
 
 const config = useRuntimeConfig();
 
 try{
-  const imagesRes = await $fetch('/api/gallery');
-  state.images = imagesRes;
+  const textsRes = await $fetch('/api/text');
+  state.texts = textsRes;
 }catch(e){
   console.log(e);
 }

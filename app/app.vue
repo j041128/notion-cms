@@ -37,18 +37,18 @@ const scrollToNearbyInvitation = () => {
 <template>
   <main>
     <div>
-      <div class="grid m-auto grid-cols-1 smartphone:grid-cols-3 mw-[750px] smartphone:mw-[1440px]">
-        <div class="hidden w-full mw-[600px] smartphone:block smartphone:col-span-2">
+      <div class="grid m-auto grid-cols-1 smartphone:grid-cols-3 max-w-[750px] smartphone:max-w-[1440px]">
+        <div class="hidden smartphone:block smartphone:col-span-2">
           <div class="relative">
             <div class="relative">
-              <div>
+              <div class="max-w-[800px]">
                 <div class="leading-none mt-[60px] mb-[30px]">
                   <p class="text-center text-[#FCDADA] font-jost text-[66px]">WEDDING</p>
                   <p class="text-center text-[#FCDADA] font-cursive text-[145px] tracking-tighter">Invitation</p>
                 </div>
                 <div class="grid grid-cols-5 mb-[60px]">
                   <div class="flex justify-center col-span-2">
-                    <NuxtImg :src="state.images.photos" width="250px" height="330px" />
+                    <NuxtImg loading="lazy" width="250px" height="330px" :src="state.texts.url_photos" />
                   </div>
                   <div class="col-span-3">
                     <dl class="font-mincho text-[20px] pb-2">
@@ -94,14 +94,14 @@ const scrollToNearbyInvitation = () => {
               </div>
             </div>
             <div class="absolute top[65%] left-[75%]">
-              <NuxtImg :src="state.images.thanks" width="212" height="110" />
+              <NuxtImg loading="lazy" width="212" height="110" :src="state.texts.url_thanks" />
             </div>
           </div>
         </div>
-        <div class="col-span-1 mw-[750px] smartphone:w-[500px] h-[99dvh] overflow-x-auto" ref="smartphone">
+        <div class="col-span-1 max-w-[750px] smartphone:w-[500px] h-[99dvh] overflow-x-auto" ref="smartphone">
           <div class="relative">
             <div class="top grid grid-cols-10">
-              <NuxtImg :src="state.images.top" class="col-span-9 w-full" width="329" height="409"/>
+              <NuxtImg loading="lazy" class="col-span-9 w-full" width="329" height="409" :src="state.texts.url_top"/>
               <div class="col-span-1">
                 <span class="w-[99%] [writing-mode:vertical-rl] font-jost text-[#FCDADA]">
                   <span class="mx-[22px]">
@@ -157,7 +157,7 @@ const scrollToNearbyInvitation = () => {
           <div class="relative">
             <ImageOnContent class="gradation">
               <template v-slot:image>
-                <NuxtImg :src="state.images.countdown" class="mask-img-top-bottom" />
+                <NuxtImg loading="lazy" class="mask-img-top-bottom" :src="state.texts.url_countdown" />
               </template>
               <template v-slot:content>
                 <div class="grid-rows-3 leading-none">
@@ -232,7 +232,7 @@ const scrollToNearbyInvitation = () => {
             <div class="relative">
               <ImageOnContent>
                 <template v-slot:image>
-                  <NuxtImg :src="state.images.profile" class="image" />
+                  <NuxtImg loading="lazy" class="image" :src="state.texts.url_profile" />
                 </template>
                 <template v-slot:content>
                   <div class="flex w-full h-full items-center justify-center">
@@ -252,7 +252,7 @@ const scrollToNearbyInvitation = () => {
             <div class="mx-15">
               <div class="grid grid-cols-2">
                 <div class="flex justify-center">
-                  <NuxtImg :src="state.images.groom" width="175px" height="175px" />
+                  <NuxtImg loading="lazy" width="175px" height="175px" :src="state.texts.url_groom" />
                 </div>
                 <div class="flex items-center justify-center">
                   <div>
@@ -272,7 +272,7 @@ const scrollToNearbyInvitation = () => {
                   </div>
                 </div>
                 <div class="flex justify-center">
-                  <NuxtImg :src="state.images.bride" width="175px" height="175px" />
+                  <NuxtImg loading="lazy" width="175px" height="175px" :src="state.texts.url_bride" />
                 </div>
               </div>
               <div class="my-4">
@@ -282,13 +282,13 @@ const scrollToNearbyInvitation = () => {
           </div>
           <hr class="text-[#F5DAF6] border-8" ref="horizon">
           <NuxtPage />
+          <div class="footer">
+            <span class="text-center">©︎ 2025 murase and nakai</span>
+          </div>
         </div>
       </div>
     </div>
   </main>
-  <footer class="bg-[#FFFFFF] smartphone:bg-transparent">
-    ©︎ 2025 murase and nakai
-  </footer>
 </template>
 <style>
 html {
@@ -330,6 +330,9 @@ select {
   background-color: #FFFFFF;
 }
 .thanks {
+  background-color: #FFFFFF;
+}
+.footer {
   background-color: #FFFFFF;
 }
 .mask-img-top-bottom {
