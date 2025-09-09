@@ -4,6 +4,9 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineNuxtConfig({
   app: {
     head: {
+      htmlAttrs: {
+        lang: 'ja'
+      },
       meta: [
         { name: 'robots', content: 'noindex' }
       ]

@@ -2,10 +2,10 @@
     <div class="grid grid-cols-4">
         <div class="flex col-span-3 flex-nowrap">
             <label for="zipcode1" class="flex font-mincho text-[20px] items-center">〒</label>
-            <input type="text" class="m-1 w-full h-[60px] border-1 border-[#C0E5D4] rounded-[6px] focus:border-3 outline-[#C0E5D4] text-[20px] font-mincho text-center" id="zipcode1" placeholder="1234567" v-model="zipcode" @input="searchAddress" @change="searchAddress">
+            <input type="text" class="m-1 h-[60px] border-1 border-[#C0E5D4] rounded-[6px] focus:border-3 outline-[#C0E5D4] text-[20px] font-mincho px-4" id="zipcode1" placeholder="1234567" v-model="zipcode" @input="searchAddress" @change="searchAddress">
         </div>
         <div class="col-span-3">
-            <select class="m-1 w-full h-[60px] border-1 border-[#C0E5D4] rounded-[6px] focus:border-3 outline-[#C0E5D4] text-[20px] font-mincho text-center" placeholder="都道府県" v-model="address1">
+            <select class="m-1 w-full h-[60px] border-1 border-[#C0E5D4] rounded-[6px] focus:border-3 outline-[#C0E5D4] text-[20px] font-mincho px-4" placeholder="都道府県" v-model="address1">
                 <option value="">都道府県</option>
                 <option value="北海道">北海道</option>
                 <option value="青森県">青森県</option>

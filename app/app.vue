@@ -9,15 +9,19 @@ const state = reactive({
 
 const config = useRuntimeConfig();
 
-const imagesRes = await fetch(config.public.NUXT_APP_URL + "/api/gallery");
-imagesRes.json().then((images) => {
-  state.images = images;
-});
+try{
+  const imagesRes = await $fetch('/api/gallery');
+  state.images = imagesRes;
+}catch(e){
+  console.log(e);
+}
 
-const textsRes = await fetch(config.public.NUXT_APP_URL + "/api/text");
-textsRes.json().then((texts) => {
-  state.texts = texts;
-});
+try{
+  const textsRes = await $fetch("/api/text");
+  state.texts = textsRes;
+}catch(e){
+  console.log(e);
+}
 
 const smartphone = useTemplateRef('smartphone');
 const horizon = useTemplateRef('horizon');
@@ -39,7 +43,7 @@ const scrollToNearbyInvitation = () => {
             <div class="relative">
               <div>
                 <div class="leading-none mt-[60px] mb-[30px]">
-                  <p class="text-center text-[#FCDADA] font-jost text-[66px] ">WEDDING</p>
+                  <p class="text-center text-[#FCDADA] font-jost text-[66px]">WEDDING</p>
                   <p class="text-center text-[#FCDADA] font-cursive text-[145px] tracking-tighter">Invitation</p>
                 </div>
                 <div class="grid grid-cols-5 mb-[60px]">
@@ -94,7 +98,7 @@ const scrollToNearbyInvitation = () => {
             </div>
           </div>
         </div>
-        <div class="col-span-1 mw-[750px] smartphone:w-[500px] h-[100dvh] box-border" ref="smartphone">
+        <div class="col-span-1 mw-[750px] smartphone:w-[500px] h-[100dvh] box-border overflow-x-auto" ref="smartphone">
           <div class="relative">
             <div class="top grid grid-cols-10">
               <NuxtImg :src="state.images.top" class="col-span-9 w-full" width="329" height="409"/>
@@ -172,36 +176,38 @@ const scrollToNearbyInvitation = () => {
             <div>
               <p class="text-center font-cursive italic text-[60px] text-[#FF8F89] tracking-tighter">Information</p>
             </div>
-            <dl class="font-mincho text-[20px] mb-8">
-              <div class="grid grid-cols-5 pb-2">
-                <dt class="col-span-2 mx-10" style="text-align-last: justify;">日時</dt>
-                <dd class="col-span-3">{{ state.texts.information_datetime }}</dd>
-              </div>
-              <div class="grid grid-cols-5 pb-2">
-                <dt class="col-span-2 mx-10" style="text-align-last: justify;">受付</dt>
-                <dd class="col-span-3">{{ state.texts.information_entry }}</dd>
-              </div>
-              <div class="grid grid-cols-5 pb-2">
-                <dt class="col-span-2 mx-10" style="text-align-last: justify;">挙式</dt>
-                <dd class="col-span-3">{{ state.texts.information_ceremony }}</dd>
-              </div>
-              <div class="grid grid-cols-5 pb-2">
-                <dt class="col-span-2 mx-10" style="text-align-last: justify;">披露宴</dt>
-                <dd class="col-span-3">{{ state.texts.information_reception }}</dd>
-              </div>
-              <div class="grid grid-cols-5 pb-2">
-                <dt class="col-span-2 mx-10" style="text-align-last: justify;">場所</dt>
-                <dd class="col-span-3">{{ state.texts.information_place }}</dd>
-              </div>
-              <div class="grid grid-cols-5 pb-2">
-                <dt class="col-span-2 mx-10" style="text-align-last: justify;">住所</dt>
-                <dd class="col-span-3">{{ state.texts.information_address }}</dd>
-              </div>
-              <div class="grid grid-cols-5 pb-2">
-                <dt class="col-span-2 mx-10" style="text-align-last: justify;">電話番号</dt>
-                <dd class="col-span-3">{{ state.texts.information_number }}</dd>
-              </div>
-            </dl>
+            <div class="flex justify-center">
+              <dl class="font-mincho text-[20px] w-[276px]">
+                <div class="grid grid-cols-5 gap-[32px] pb-2">
+                  <dt class="col-span-2 [text-align-last:justify]">日時</dt>
+                  <dd class="col-span-3">{{ state.texts.information_datetime }}</dd>
+                </div>
+                <div class="grid grid-cols-5 gap-[32px] pb-2">
+                  <dt class="col-span-2 [text-align-last:justify]">受付</dt>
+                  <dd class="col-span-3">{{ state.texts.information_entry }}</dd>
+                </div>
+                <div class="grid grid-cols-5 gap-[32px] pb-2">
+                  <dt class="col-span-2 [text-align-last:justify]">挙式</dt>
+                  <dd class="col-span-3">{{ state.texts.information_ceremony }}</dd>
+                </div>
+                <div class="grid grid-cols-5 gap-[32px] pb-2">
+                  <dt class="col-span-2 [text-align-last:justify]">披露宴</dt>
+                  <dd class="col-span-3">{{ state.texts.information_reception }}</dd>
+                </div>
+                <div class="grid grid-cols-5 gap-[32px] pb-2">
+                  <dt class="col-span-2 [text-align-last:justify]">場所</dt>
+                  <dd class="col-span-3">{{ state.texts.information_place }}</dd>
+                </div>
+                <div class="grid grid-cols-5 gap-[32px] pb-2">
+                  <dt class="col-span-2 [text-align-last:justify]">住所</dt>
+                  <dd class="col-span-3">{{ state.texts.information_address }}</dd>
+                </div>
+                <div class="grid grid-cols-5 gap-[32px] pb-2">
+                  <dt class="col-span-2 [text-align-last:justify]">電話番号</dt>
+                  <dd class="col-span-3">{{ state.texts.information_number }}</dd>
+                </div>
+              </dl>
+            </div>
             <div class="m-4">
               <BasicMap :position="{ lat: Number(state.texts.information_lat), lng: Number(state.texts.information_lng) }" :zoom="16" :name="state.texts.information_place" />
             </div>
@@ -280,6 +286,9 @@ const scrollToNearbyInvitation = () => {
       </div>
     </div>
   </main>
+  <footer>
+    ©︎ 2025 murase and nakai
+  </footer>
 </template>
 <style>
 html {
@@ -295,6 +304,15 @@ body {
   background-size: 66px 66px;
   background-repeat: repeat;
   background-position: center center;
+}
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTAiIHZpZXdCb3g9IjAgMCAxNiAxMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEgMUw4IDhMMTUgMSIgc3Ryb2tlPSIjMUUxRTFFIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4K");
+  background-repeat: no-repeat;
+  background-size: 14px 7px;
+  background-position: right 30px center;
 }
 .top {
   background-color: #EEFFF7;

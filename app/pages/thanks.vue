@@ -43,7 +43,7 @@ const state = reactive({
 
 const config = useRuntimeConfig();
 
-const imagesRes = await fetch(config.public.NUXT_APP_URL + "/api/gallery");
+const imagesRes = await fetch("/api/gallery");
 imagesRes.json().then((images) => {
   state.images = images;
 });
