@@ -98,7 +98,7 @@ const scrollToNearbyInvitation = () => {
             </div>
           </div>
         </div>
-        <div class="col-span-1 mw-[750px] smartphone:w-[500px] h-[100dvh] box-border overflow-x-auto" ref="smartphone">
+        <div class="col-span-1 mw-[750px] smartphone:w-[500px] h-[100dvh] box-border" ref="smartphone">
           <div class="relative">
             <div class="top grid grid-cols-10">
               <NuxtImg :src="state.images.top" class="col-span-9 w-full" width="329" height="409"/>
@@ -177,7 +177,7 @@ const scrollToNearbyInvitation = () => {
               <p class="text-center font-cursive italic text-[60px] text-[#FF8F89] tracking-tighter">Information</p>
             </div>
             <div class="flex justify-center">
-              <dl class="font-mincho text-[20px] w-[276px]">
+              <dl class="font-mincho w-[276px]">
                 <div class="grid grid-cols-5 gap-[32px] pb-2">
                   <dt class="col-span-2 [text-align-last:justify]">日時</dt>
                   <dd class="col-span-3">{{ state.texts.information_datetime }}</dd>
