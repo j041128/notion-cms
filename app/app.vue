@@ -30,7 +30,10 @@ const scrollToNearbyInvitation = () => {
   var rect = horizon.value.getBoundingClientRect();
   var position = rect.top;
 
-  smartphone.value.scrollTo(0, position);
+  smartphone.value.scrollBy({
+    top: position,
+    behavior: 'smooth',
+  });
 }
 </script>
 
@@ -98,7 +101,7 @@ const scrollToNearbyInvitation = () => {
             </div>
           </div>
         </div>
-        <div class="col-span-1 max-w-[750px] smartphone:w-[500px] h-[100dvh] overflow-x-auto" ref="smartphone">
+        <div class="max-w-[750px] h-[100dvh] col-span-1 overflow-x-auto" ref="smartphone">
           <div class="relative">
             <div class="top grid grid-cols-10">
               <NuxtImg loading="lazy" class="col-span-9 w-full" width="329" height="409" :src="state.texts.url_top"/>

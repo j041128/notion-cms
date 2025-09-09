@@ -49,15 +49,6 @@ export default defineNuxtConfig({
       ssr: false,
     }
   },
-  basicAuth: {
-    users: [
-      {
-        username: process.env.AUTH_USERNAME,
-        password: process.env.AUTH_PASSWORD
-      },
-    ],
-    allowedRoutes: ["/api/*"]
-  },
   image: {
     domeins: [
       'https://res.cloudinary.com'

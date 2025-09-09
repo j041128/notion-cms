@@ -125,36 +125,34 @@ const checkRequired = () => {
 }
 
 const handleFormSubmit = async () => {
-    const body = new URLSearchParams();
-    body.append('entry.707064267', form.attendance);
-    body.append('entry.654003671', form.first);
-    body.append('entry.720946575', form.last);
-    body.append('entry.1837378746', form.firstkana);
-    body.append('entry.379307055', form.lastkana);
-    body.append('entry.577033923', form.name1);
-    body.append('entry.1463568491', form.name1kana);
-    body.append('entry.720175567', form.name2);
-    body.append('entry.1443811429', form.name2kana);
-    body.append('entry.924191309', form.name3);
-    body.append('entry.176464161', form.name3kana);
-    body.append('entry.829516189', form.name4);
-    body.append('entry.1903233454', form.name4kana);
-    body.append('entry.1446298437', form.flag);
-    body.append('entry.280336886', form.mailaddress);
-    body.append('entry.1473960836', form.zipcode);
-    body.append('entry.338786', form.city);
-    body.append('entry.778005714', form.address2);
-    body.append('entry.331640168', form.address3);
-    body.append('entry.1584758284', form.allergy);
-    body.append('entry.892809074', form.message);
-
-
     const CORS_PROXY = "/api/proxy/";
 
     try{
         const res = await $fetch(CORS_PROXY + config.public.GOOGLE_FORM_ACTION, {
             method: 'POST',
-            body: body.toString(),
+            body: {
+                'entry.707064267': form.attendance,
+                'entry.654003671': form.first,
+                'entry.720946575': form.last,
+                'entry.1837378746': form.firstkana,
+                'entry.379307055': form.lastkana,
+                'entry.577033923': form.name1,
+                'entry.1463568491': form.name1kana,
+                'entry.720175567': form.name2,
+                'entry.1443811429': form.name2kana,
+                'entry.924191309': form.name3,
+                'entry.176464161': form.name3kana,
+                'entry.829516189': form.name4,
+                'entry.1903233454': form.name4kana,
+                'entry.1446298437': form.flag,
+                'entry.280336886': form.mailaddress,
+                'entry.1473960836': form.zipcode,
+                'entry.338786': form.city,
+                'entry.778005714': form.address2,
+                'entry.331640168': form.address3,
+                'entry.1584758284': form.allergy,
+                'entry.892809074': form.message,
+            },
         });
         router.push('/thanks');
     }catch(e){
