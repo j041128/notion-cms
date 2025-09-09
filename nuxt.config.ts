@@ -8,7 +8,8 @@ export default defineNuxtConfig({
         lang: 'ja'
       },
       meta: [
-        { name: 'robots', content: 'noindex' }
+        { name: 'robots', content: 'noindex' },
+        { name: 'format-detection', content: 'telephone=no,address=no,email=no' }
       ]
     }
   },
