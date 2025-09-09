@@ -28,7 +28,6 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     public: {
-      NUXT_APP_URL: process.env.NUXT_APP_URL,
       CORS_PROXY: process.env.CORS_PROXY,
       GOOGLE_FORM_ACTION: process.env.GOOGLE_FORM_ACTION,
       googleMaps: {
