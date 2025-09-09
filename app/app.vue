@@ -37,14 +37,14 @@ const scrollToNearbyInvitation = () => {
 <template>
   <main>
     <div>
-      <div class="grid m-auto grid-cols-1 smartphone:grid-cols-3 max-w-[750px] smartphone:max-w-[1440px]">
+      <div class="grid m-auto grid-cols-1 smartphone:grid-cols-3 gap-[47px] max-w-[750px] smartphone:max-w-[1440px]">
         <div class="hidden smartphone:block smartphone:col-span-2">
           <div class="relative">
             <div class="relative">
               <div class="max-w-[800px]">
                 <div class="leading-none mt-[60px] mb-[30px]">
-                  <p class="text-center text-[#FCDADA] font-jost text-[66px]">WEDDING</p>
-                  <p class="text-center text-[#FCDADA] font-cursive text-[145px] tracking-tighter">Invitation</p>
+                  <p class="text-center text-[#FCDADA] font-jost text-[min(13vw,66px)]">WEDDING</p>
+                  <p class="text-center text-[#FCDADA] font-cursive text-[min(13vw,145px)] tracking-tighter">Invitation</p>
                 </div>
                 <div class="grid grid-cols-5 mb-[60px]">
                   <div class="flex justify-center col-span-2">
@@ -98,7 +98,7 @@ const scrollToNearbyInvitation = () => {
             </div>
           </div>
         </div>
-        <div class="col-span-1 max-w-[750px] smartphone:w-[500px] h-[99dvh] overflow-x-auto" ref="smartphone">
+        <div class="col-span-1 max-w-[750px] smartphone:w-[500px] h-[100dvh] overflow-x-auto" ref="smartphone">
           <div class="relative">
             <div class="top grid grid-cols-10">
               <NuxtImg loading="lazy" class="col-span-9 w-full" width="329" height="409" :src="state.texts.url_top"/>
