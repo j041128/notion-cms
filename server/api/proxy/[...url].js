@@ -9,7 +9,7 @@ export default defineEventHandler(async (event) => {
     });
   }
 
-  const res =await fetch(url, {
+  const res = await fetch(url, {
     method: 'POST',
     headers: {
       'Access-Control-Allow-Origin': '*'

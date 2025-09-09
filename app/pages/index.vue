@@ -151,17 +151,14 @@ const handleFormSubmit = async () => {
 
     const CORS_PROXY = "/api/proxy/";
 
-    const res = await fetch(CORS_PROXY + config.public.GOOGLE_FORM_ACTION, {
-        method: 'POST',
-        body: body.toString(),
-    });
-    switch(res.status){
-        case 200:
-            router.push('/thanks');
-            break;
-        default:
-            console.log(res);
-            break;
+    try{
+        const res = await $fetch(CORS_PROXY + config.public.GOOGLE_FORM_ACTION, {
+            method: 'POST',
+            body: body.toString(),
+        });
+        router.push('/thanks');
+    }catch(e){
+        console.log(e);
     }
 }
 </script>

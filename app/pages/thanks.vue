@@ -43,8 +43,11 @@ const state = reactive({
 
 const config = useRuntimeConfig();
 
-const imagesRes = await fetch("/api/gallery");
-imagesRes.json().then((images) => {
-  state.images = images;
-});
+try{
+  const imagesRes = await $fetch('/api/gallery');
+  state.images = imagesRes;
+}catch(e){
+  console.log(e);
+}
+
 </script>
