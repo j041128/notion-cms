@@ -1,3 +1,3 @@
 <template>
-    <span class="border border-1 borer-[#F67A67] rounded-md px-[7px] pt-[3px] pb-[5px] text-[14px] text-[#F67A67] font-mincho"><slot></slot></span>
+    <span class="border border-1 border-[#F67A67] rounded-md px-[7px] pt-[1px] pb-[3px] box-border text-[#F67A67] font-mincho"><slot></slot></span>
 </template>
