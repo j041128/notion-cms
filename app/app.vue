@@ -39,22 +39,22 @@ const scrollToNearbyInvitation = () => {
 
 <template>
   <main>
-    <div>
-      <div class="grid m-auto grid-cols-1 smartphone:grid-cols-3 gap-[47px] max-w-[750px] smartphone:max-w-[1440px]">
-        <div class="hidden smartphone:block smartphone:col-span-2">
+    <div class="flex justify-center">
+      <div class="flex gap-[47px]">
+        <div class="hidden smartphone:block">
           <div class="relative">
             <div class="relative">
               <div class="max-w-[800px]">
                 <div class="leading-none mt-[60px] mb-[30px]">
-                  <p class="text-center text-[#FCDADA] font-jost text-[min(13vw,66px)]">WEDDING</p>
-                  <p class="text-center text-[#FCDADA] font-cursive text-[min(13vw,145px)] tracking-tighter">Invitation</p>
+                  <p class="text-center text-[#FCDADA] font-jost text-[min(4vw,60px)]">WEDDING</p>
+                  <p class="text-center text-[#FCDADA] font-cursive text-[min(8vw,120px)] tracking-tighter">Invitation</p>
                 </div>
                 <div class="grid grid-cols-5 mb-[60px]">
-                  <div class="flex justify-center col-span-2">
+                  <div class="flex justify-center col-span-2 hidden xl:block">
                     <NuxtImg loading="lazy" width="250px" height="330px" :src="state.texts.url_photos" />
                   </div>
-                  <div class="col-span-3">
-                    <dl class="font-mincho text-[20px] pb-2">
+                  <div class="flex justify-center col-span-5 xl:col-span-3">
+                    <dl class="w-[480px] font-mincho text-[min(6vw,20px)] pb-2">
                       <div class="grid grid-cols-5 pb-2">
                         <dt class="col-span-2 mx-10" style="text-align-last: justify;">日時</dt>
                         <dd class="col-span-3">{{ state.texts.information_datetime }}</dd>
@@ -92,16 +92,16 @@ const scrollToNearbyInvitation = () => {
                   </button>
                 </div>
               </div>
-              <div class="absolute top-[80%] left-[-5%]">
+              <div class="absolute top-[70%] left-[-5%]">
                 <NuxtImg src="/img/jewel8.png" width="215px" height="263px" />
               </div>
             </div>
-            <div class="absolute top[65%] left-[75%]">
+            <div class="absolute top-[90%] left-[75%]">
               <NuxtImg loading="lazy" width="212" height="110" :src="state.texts.url_thanks" />
             </div>
           </div>
         </div>
-        <div class="max-w-[750px] h-[100dvh] col-span-1 overflow-x-auto" ref="smartphone">
+        <div class="max-w-[400px] h-[100dvh] col-span-1 overflow-x-auto" ref="smartphone">
           <div class="relative">
             <div class="top grid grid-cols-10">
               <NuxtImg loading="lazy" class="col-span-9 w-full" width="329" height="409" :src="state.texts.url_top"/>
