@@ -41,7 +41,7 @@ const scrollToNearbyInvitation = () => {
   <main>
     <div class="flex justify-center">
       <div class="flex gap-[47px]">
-        <div class="hidden smartphone:block">
+        <div class="hidden md:block">
           <div class="relative">
             <div class="relative">
               <div class="max-w-[800px]">
