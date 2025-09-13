@@ -101,7 +101,7 @@ const scrollToNearbyInvitation = () => {
             </div>
           </div>
         </div>
-        <div class="max-w-[460px] h-[100dvh] col-span-1 overflow-x-auto" ref="smartphone">
+        <div class="max-w-[450px] h-[100dvh] col-span-1 overflow-x-auto" ref="smartphone">
           <div class="relative">
             <div class="top grid grid-cols-10">
               <NuxtImg loading="lazy" class="col-span-9 w-full" width="329" height="409" :src="state.texts.url_top"/>
