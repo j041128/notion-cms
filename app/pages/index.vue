@@ -38,7 +38,7 @@
                     />
                 </div>
                 <div class="my-4">
-                    <label class="flex items-end mb-2" for="names"><span class="font-mincho text-[24px] mb-2">ご連名</span></label>
+                    <label class="flex items-end mb-2" for="names"><span class="font-mincho text-[24px]">ご連名</span></label>
                     <div id="names">
                         <FullNameInput v-model:name="form.name1" v-model:kana="form.name1kana" id="name1" placeholder="連名1" />
                         <FullNameInput v-model:name="form.name2" v-model:kana="form.name2kana" id="name2" placeholder="連名2" />
