@@ -1,5 +1,5 @@
 <template>
-    <div class="thanks">
+    <div class="thanks pb-100">
         <div class="relative">
             <div class="relative">
                 <ImageOnContent>
@@ -24,7 +24,7 @@
                 <NuxtImg src="/img/jewel1.png" width="116px" height="108px" />
             </div>
         </div>
-        <div class="py-50">
+        <div>
             <div class="flex justify-center">
                 <NuxtImg :src="props.url_thanks" width="212" height="110"></NuxtImg>
             </div>
