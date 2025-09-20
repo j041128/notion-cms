@@ -127,12 +127,12 @@ const scrollToNearbyInvitation = () => {
                     </button>
                   </div>
                 </div>
-                <div class="absolute top-[70%] left-[-5%]">
-                  <NuxtImg src="/img/jewel8.png" width="215px" height="263px" />
+                <div class="absolute top-[80%] left-[-5%]">
+                  <NuxtImg src="/img/jewel8.png" width="150px" height="160px" />
                 </div>
               </div>
               <div class="absolute top-[90%] left-[75%]">
-                <NuxtImg loading="lazy" width="212" height="110" :src="state.texts.url_thanks" />
+                <NuxtImg loading="lazy" width="212" height="110" :src="state.texts.url_dot" />
               </div>
             </div>
           </FadeIn>

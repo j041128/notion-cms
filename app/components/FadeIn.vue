@@ -19,7 +19,6 @@ onMounted(() => {
     const observerCallBack = (entries) => {
         for (const entry of entries) {
             if (entry.isIntersecting) {
-                console.log(entry);
                 visible.value = true;
             }
         }
