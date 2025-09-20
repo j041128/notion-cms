@@ -26,7 +26,7 @@ onMounted(() => {
 
     const observerOptions = {
         root: null,
-        threshold: [1]
+        threshold: [0.5]
     };
 
     observer = new IntersectionObserver(observerCallBack, observerOptions);

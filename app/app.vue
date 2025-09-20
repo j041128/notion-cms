@@ -11,7 +11,7 @@ const state = reactive({
 
 const config = useRuntimeConfig();
 
-const MAX_RETRY = 3;
+const MAX_RETRY = 10;
 
 let flag = false;
 let count = 0;
@@ -168,7 +168,7 @@ const scrollToNearbyInvitation = () => {
                 <NuxtImg src="/img/jewel2.png" width="112px" height="114" />
               </div>
             </div>
-            <FadeIn>
+            <FadeIn class="h-[416px] w-full">
               <div>
                 <div class="pb-8">
                   <p class="text-center font-mincho">{{ state.texts.greeting_acronym }}</p>
@@ -217,7 +217,7 @@ const scrollToNearbyInvitation = () => {
             <div>
               <p class="text-center font-cursive italic text-[60px] text-[#FF8F89] tracking-tighter">Information</p>
             </div>
-            <FadeIn>
+            <FadeIn class="h-[248px] w-full">
               <div class="flex justify-center">
                 <dl class="font-mincho w-[276px]">
                   <div class="grid grid-cols-5 gap-[32px] pb-2">
@@ -328,7 +328,7 @@ const scrollToNearbyInvitation = () => {
             </div>
           </div>
           <hr class="text-[#F5DAF6] border-8" ref="horizon">
-          <NuxtPage />
+          <NuxtPage :url_thanks="state.texts.url_thanks"/>
           <div class="footer">
             <span class="text-center">©︎ 2025 murase and nakai</span>
           </div>
