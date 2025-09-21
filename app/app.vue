@@ -76,66 +76,64 @@ const scrollToNearbyInvitation = () => {
     <div class="flex justify-center">
       <div class="flex gap-[47px]">
         <div class="hidden md:block">
-          <FadeIn>
+          <div class="relative">
             <div class="relative">
-              <div class="relative">
-                <div class="max-w-[800px]">
-                  <div class="leading-none mt-[30px] mb-[15px]">
-                    <p class="text-center text-[#FF8F89] font-jost text-[min(4vw,60px)]">WEDDING</p>
-                    <p class="text-center text-[#FF89A9] font-cursive text-[min(8vw,120px)] tracking-tighter">Invitation</p>
+              <div class="max-w-[800px]">
+                <div class="leading-none mt-[30px] mb-[15px]">
+                  <p class="text-center text-[#FF8F89] font-jost text-[min(4vw,60px)]">WEDDING</p>
+                  <p class="text-center text-[#FF89A9] font-cursive text-[min(8vw,120px)] tracking-tighter">Invitation</p>
+                </div>
+                <div class="grid grid-cols-5 mb-[60px]">
+                  <div class="flex justify-center col-span-2 hidden xl:block">
+                    <NuxtImg loading="lazy" width="250px" height="330px" :src="state.texts.url_photos" />
                   </div>
-                  <div class="grid grid-cols-5 mb-[60px]">
-                    <div class="flex justify-center col-span-2 hidden xl:block">
-                      <NuxtImg loading="lazy" width="250px" height="330px" :src="state.texts.url_photos" />
-                    </div>
-                    <div class="flex justify-center col-span-5 xl:col-span-3">
-                      <dl class="w-[480px] font-mincho text-[min(6vw,20px)] pb-2">
-                        <div class="grid grid-cols-5 pb-2">
-                          <dt class="col-span-2 mx-10" style="text-align-last: justify;">日時</dt>
-                          <dd class="col-span-3">{{ state.texts.information_datetime }}</dd>
-                        </div>
-                        <div class="grid grid-cols-5 pb-2">
-                          <dt class="col-span-2 mx-10" style="text-align-last: justify;">受付</dt>
-                          <dd class="col-span-3">{{ state.texts.information_entry }}</dd>
-                        </div>
-                        <div class="grid grid-cols-5 pb-2">
-                          <dt class="col-span-2 mx-10" style="text-align-last: justify;">挙式</dt>
-                          <dd class="col-span-3">{{ state.texts.information_ceremony }}</dd>
-                        </div>
-                        <div class="grid grid-cols-5 pb-2">
-                          <dt class="col-span-2 mx-10" style="text-align-last: justify;">披露宴</dt>
-                          <dd class="col-span-3">{{ state.texts.information_reception }}</dd>
-                        </div>
-                        <div class="grid grid-cols-5 pb-2">
-                          <dt class="col-span-2 mx-10" style="text-align-last: justify;">場所</dt>
-                          <dd class="col-span-3">{{ state.texts.information_place }}</dd>
-                        </div>
-                        <div class="grid grid-cols-5 pb-2">
-                          <dt class="col-span-2 mx-10" style="text-align-last: justify;">住所</dt>
-                          <dd class="col-span-3">{{ state.texts.information_address }}</dd>
-                        </div>
-                        <div class="grid grid-cols-5 pb-2">
-                          <dt class="col-span-2 mx-10" style="text-align-last: justify;">電話番号</dt>
-                          <dd class="col-span-3">{{ state.texts.information_number }}</dd>
-                        </div>
-                      </dl>
-                    </div>
-                  </div>
-                  <div class="flex justify-center">
-                    <button class="py-[24px] px-[62px] rounded-full shadow-md bg-[#FCDADA] disabled:bg-[#D9D9D9] disabled:text-white" @click="scrollToNearbyInvitation()">
-                      <span class="font-mincho text-[24px]">招待状に回答する</span>
-                    </button>
+                  <div class="flex justify-center col-span-5 xl:col-span-3">
+                    <dl class="w-[480px] font-mincho text-[min(6vw,20px)] pb-2">
+                      <div class="grid grid-cols-5 pb-2">
+                        <dt class="col-span-2 mx-10" style="text-align-last: justify;">日時</dt>
+                        <dd class="col-span-3">{{ state.texts.information_datetime }}</dd>
+                      </div>
+                      <div class="grid grid-cols-5 pb-2">
+                        <dt class="col-span-2 mx-10" style="text-align-last: justify;">受付</dt>
+                        <dd class="col-span-3">{{ state.texts.information_entry }}</dd>
+                      </div>
+                      <div class="grid grid-cols-5 pb-2">
+                        <dt class="col-span-2 mx-10" style="text-align-last: justify;">挙式</dt>
+                        <dd class="col-span-3">{{ state.texts.information_ceremony }}</dd>
+                      </div>
+                      <div class="grid grid-cols-5 pb-2">
+                        <dt class="col-span-2 mx-10" style="text-align-last: justify;">披露宴</dt>
+                        <dd class="col-span-3">{{ state.texts.information_reception }}</dd>
+                      </div>
+                      <div class="grid grid-cols-5 pb-2">
+                        <dt class="col-span-2 mx-10" style="text-align-last: justify;">場所</dt>
+                        <dd class="col-span-3">{{ state.texts.information_place }}</dd>
+                      </div>
+                      <div class="grid grid-cols-5 pb-2">
+                        <dt class="col-span-2 mx-10" style="text-align-last: justify;">住所</dt>
+                        <dd class="col-span-3">{{ state.texts.information_address }}</dd>
+                      </div>
+                      <div class="grid grid-cols-5 pb-2">
+                        <dt class="col-span-2 mx-10" style="text-align-last: justify;">電話番号</dt>
+                        <dd class="col-span-3">{{ state.texts.information_number }}</dd>
+                      </div>
+                    </dl>
                   </div>
                 </div>
-                <div class="absolute top-[80%] left-[-5%]">
-                  <NuxtImg src="/img/jewel8.png" width="150px" height="160px" />
+                <div class="flex justify-center">
+                  <button class="py-[24px] px-[62px] rounded-full shadow-md bg-[#FCDADA] disabled:bg-[#D9D9D9] disabled:text-white" @click="scrollToNearbyInvitation()">
+                    <span class="font-mincho text-[24px]">招待状に回答する</span>
+                  </button>
                 </div>
               </div>
-              <div class="absolute top-[90%] left-[75%]">
-                <NuxtImg loading="lazy" width="212" height="110" :src="state.texts.url_dot" />
+              <div class="absolute top-[80%] left-[-5%]">
+                <NuxtImg src="/img/jewel8.png" width="150px" height="160px" />
               </div>
             </div>
-          </FadeIn>
+            <div class="absolute top-[90%] left-[75%]">
+              <NuxtImg loading="lazy" width="212" height="110" :src="state.texts.url_dot" />
+            </div>
+          </div>
         </div>
         <div class="max-w-[450px] h-[100dvh] col-span-1 overflow-x-auto" ref="smartphone">
           <div class="relative">
@@ -293,7 +291,7 @@ const scrollToNearbyInvitation = () => {
           </div>
           <div class="profile py-[39px]">
             <div class="mx-15">
-              <FadeIn>
+              <FadeIn class="h-[330px] w-full">
                 <div class="grid grid-cols-2">
                   <div class="flex justify-center">
                     <NuxtImg loading="lazy" width="175px" height="175px" :src="state.texts.url_groom" />
@@ -309,7 +307,7 @@ const scrollToNearbyInvitation = () => {
                   <p class="text-center text-[16px] font-mincho">{{ state.texts.profile_groom_comment }}</p>
                 </div>
               </FadeIn>
-              <FadeIn>
+              <FadeIn class="h-[330px] w-full">
                 <div class="grid grid-cols-2">
                   <div class="flex items-center justify-center">
                     <div>

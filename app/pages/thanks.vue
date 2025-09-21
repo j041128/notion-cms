@@ -1,5 +1,5 @@
 <template>
-    <div class="thanks pb-100">
+    <div class="thanks pb-100" ref="thanks">
         <div class="relative">
             <div class="relative">
                 <ImageOnContent>
@@ -42,5 +42,21 @@ const props = defineProps({
         type: String,
         default: "",
     },
+});
+
+const smartphone = useTemplateRef('smartphone');
+const thanks = useTemplateRef('thanks');
+
+const scrollToNearbyThanks = () => {
+  var rect = thanks.value.getBoundingClientRect();
+  var position = rect.top;
+
+  smartphone.value.scrollBy({
+    top: position,
+  });
+}
+
+onMounted(() => {
+  scrollToNearbyThanks();
 });
 </script>

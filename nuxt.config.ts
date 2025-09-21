@@ -4,10 +4,12 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineNuxtConfig({
   app: {
     head: {
+      title: '2026年1月18日結婚式招待状',
       htmlAttrs: {
         lang: 'ja'
       },
       meta: [
+        { name: 'description', content: '回答は2025年11月30日までにお願いいたします。' },
         { name: 'robots', content: 'noindex' },
         { name: 'format-detection', content: 'telephone=no,address=no,email=no' }
       ]
